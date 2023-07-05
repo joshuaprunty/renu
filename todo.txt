@@ -1,0 +1,35 @@
+GENERAL, ORGANIZATION, PROJECT STRUCTURE 
+----------------------------------------------------------------
+- Break down components into smaller nested files
+- Separate CSS Stylesheets
+- Code Comments
+
+
+COMPONENTS TO ADD 
+----------------------------------------------------------------
+
+
+HOMEPAGE 
+----------------------------------------------------------------
+- Stylize/Complete Footer
+- Additional Sections and Info
+
+ADDITIONAL PAGES AND LINKS
+----------------------------------------------------------------
+- Contact Page
+- Course Database Explore
+
+FORM 
+----------------------------------------------------------------
+- Finalize Questions/Workflow
+
+STARTING BACKEND 
+----------------------------------------------------------------
+- Python, Selenium, MongoDB
+- Check in on API Access progress
+- Meantime - Webscrape for Courses
+
+
+MISC
+----------------------------------------------------------------
+- New Font (Armin SF is a demo - missing chars)
