@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/App.css";
 
-function NavBar() {
+function Navbar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -80,4 +80,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
