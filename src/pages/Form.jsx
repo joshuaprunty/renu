@@ -1,34 +1,33 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import Footer from "../components/Footer";
+import "../styles/Home.css";
 
 function Form() {
   return (
     <>
-      <Container fluid className="vh-100">
-        <Row className="h-100 align-items-center justify-content-center ">
-          <Col className="col-7">
-            <h1 className="mb-4">Start Here.</h1>
-            <Card
-              className="mb-4"
-              style={{
-                height: "250px",
-              }}
+      <div class="container-fluid position-fixed vh-100 mt-5 mb-0">
+        <div class="form-div-main bg-white h-100">
+          <img id="form-background-img" src="./assets/NorthwesternN.png" />
+          <div class="form-content d-grid gap-2 position-relative z-2">
+            <h1>Find your next course in under 10 minutes.</h1>
+            <p>
+              Tell us about what you're looking for in upcoming classes, which
+              requirements you’d like to fulfill, and previous courses you’ve
+              taken.
+            </p>
+            <a
+              href="./form-section-basic.html"
+              class="btn btn-secondary btn-lg "
+              id="start-assessment-button"
             >
-              <Card.Body style={{ fontFamily: "Armin N", paddingTop: "2rem" }}>
-                <h4 className="card-title mb-6">Card Title.</h4>
-                <p className="card-text mb-6">
-                  Example Text. Get personalized class recommendations in under
-                  ten minutes.
-                </p>
-                <a className="btn btn-primary">Get Started</a>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-      <Footer />
+              Start Assessment
+            </a>
+          </div>
+        </div>
+        <div class="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
+          <div class="p-b-left h-100"></div>
+          <div class="p-b-right h-100"></div>
+        </div>
+      </div>
     </>
   );
 }

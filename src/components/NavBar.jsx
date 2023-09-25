@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/App.css";
 
 function Navbar() {
   return (
@@ -9,7 +8,6 @@ function Navbar() {
           className="navbar-brand"
           href="/"
           style={{
-            fontFamily: "Armin SB",
             fontSize: "2em",
             paddingTop: "0rem",
             paddingLeft: "0.8rem",
@@ -38,13 +36,18 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="/form">
+                Get Started
+              </a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link" href="/about">
                 About
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/settings">
-                Settings
+                Login
               </a>
             </li>
             <li>
