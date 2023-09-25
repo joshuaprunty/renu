@@ -1,0 +1,238 @@
+:root {
+  color-scheme: dark;
+}
+
+/* BODY FONT --------------------------------------------------------*/
+body {
+  font-family: "Lato";
+  background-color: #2a292c;
+}
+
+/* NAVBAR -----------------------------------------------------------*/
+.navbar {
+  background-color: #2a292c;
+}
+
+.navbar-brand {
+  font-size: 1.6em;
+  align-self: center;
+  padding-top: 0;
+}
+
+/* MODAL ----------------------------------------------------------*/
+.modal-brand {
+  color: #443161;
+  margin: auto;
+  font-size: 2.3em;
+  font-weight: 700;
+}
+
+.modal-heading-div {
+  margin: auto;
+}
+
+.modal-version {
+  font-weight: 100;
+  font-size: 1.3em;
+}
+
+.modal-footer-link {
+  font-size: 0.8em;
+  margin: auto;
+}
+
+/* SECTION - HERO --------------------------------------------------*/
+.hero-div {
+  background-image: url(../assets/Deering.jpg);
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  position: relative;
+  display: flex;
+  padding: 15%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  max-height: 850px;
+}
+
+@media (max-width: 767px) {
+  .hero-img {
+    width: 100%;
+    margin-top: 45px;
+  }
+}
+
+.hero-img {
+  width: 400px;
+}
+
+/* SECTION - SECONDARY ----------------------------------------------*/
+.secondary-div {
+  min-height: 500px;
+}
+
+.secondary-hr {
+  width: 70%;
+  margin: 0 auto 20px;
+}
+
+/* SECTION - TERNARY */
+.ternary-div {
+  background-color: #474749;
+}
+
+.ternary-card {
+  width: 95%;
+  background-color: lightgray;
+  height: 160px;
+  margin: 30px auto;
+  padding: 0;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+}
+
+.tc-head {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.tc-body {
+  font-weight: 100;
+}
+
+.tc-img {
+  margin: 0 0;
+  height: 100%;
+  float: left;
+  flex-shrink: 0;
+}
+
+.tc-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+/* SECTION - QUATERNARY ----------------------------------------------*/
+.quaternary-div {
+  background-color: #443161;
+  height: 65vh;
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.quat-background-img {
+  display: block;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#form-background-img {
+  display: block;
+  height: 150%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* SECTION - FOOTER -------------------------------------------------*/
+.footer-div {
+  background-color: #2a292c;
+  padding-top: 30px;
+  font-size: 0.9em;
+}
+
+.footer-list {
+  list-style: none;
+  margin-left: 30px;
+  color: #dddddd;
+}
+
+.fl-top {
+  font-weight: 700;
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  font-weight: bold;
+  color: #544171;
+  transition-duration: 0.2s;
+}
+
+/*SECTION - FORM -------------------------------------------------*/
+.form-div-main {
+  width: 85%;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 50px;
+}
+
+.form-progress-bar {
+  width: 15%;
+  background-color: #000000;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#start-assessment-button {
+  background-color: #443161 !important;
+}
+
+#start-assessment-button:hover {
+  background-color: #352060 !important;
+  transition-duration: 0.15s !important;
+}
+
+.form-content {
+  width: 86%;
+}
+
+.formq-content {
+  width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .form-progress-bar {
+    display: none;
+    width: 0;
+  }
+
+  .form-div-main {
+    width: 100%;
+  }
+}
+
+.check-square {
+  height: 20px;
+  width: 20px;
+  border-radius: 15%;
+  border: 2px solid #999999;
+  display: inline-block;
+}
