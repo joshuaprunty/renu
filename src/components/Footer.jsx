@@ -1,60 +1,95 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
+import "../styles/Home.css";
 
 function Footer() {
   return (
-    <footer className="bd-footer py-1 py-md-1 mt-2 bg-dark">
-      <Container className="py-2 py-md-4 px-4 px-md-3 text-light">
-        <Row>
-          <Col className="col-lg-3 mb-3">
-            <a
-              className="d-inline-flex align-items-center mb-2 text-decoration-none text-white-50"
-              href="/"
-              aria-label="Renu"
-            >
-              <span className="fs-4">renu.</span>
-            </a>
-
-            <ul className="list-unstyled small">
-              <li className="mb-2">Ver. 0.0.1</li>
-              <li className="mb-2">
-                © 2023 Joshua Prunty. All rights reserved.
+    <div class="container-fluid footer-div">
+      <div class="row justify-content-center">
+        <div class="col-md-3 text-white justify-content-center">
+          <div class="ms-auto">
+            <ul class="footer-list">
+              <li class="footer-list-item fl-top">Renu</li>
+              <li class="footer-list-item fw-light">v0.0.1</li>
+              <li class="footer-list-item fw-light">
+                Created by <br />
+                Joshua Prunty
               </li>
             </ul>
-          </Col>
-
-          <Col className="col-6 col-lg-2 offset-lg-1 mb-3">
-            <h5 className="text-white-50">Links</h5>
-            <ul className="list-unstyled">
-              <li className="mb-2">
-                <a href="/">Home</a>
+          </div>
+        </div>
+        <div class="col-md-3 text-white justify-content-center">
+          <div class="ms-auto">
+            <ul class="footer-list">
+              <li class="footer-list-item fl-top">Links</li>
+              <li class="footer-list-item fw-light">
+                <a class="footer-link" href="/">
+                  Home
+                </a>
               </li>
-              <li className="mb-2">
-                <a href="/about">About</a>
+              <li class="footer-list-item fw-light">
+                <a class="footer-link" href="#secondary-div">
+                  How it Works
+                </a>
               </li>
-              <li className="mb-2">
-                <a href="/settings">Settings</a>
-              </li>
-              <li className="mb-2">
-                <a href="/form">Get Started</a>
-              </li>
-            </ul>
-          </Col>
-
-          <Col className="col-6 col-lg-2 mb-3">
-            <h5 className="text-white-50">Resources</h5>
-            <ul className="list-unstyled">
-              <li className="mb-2">
-                <a href="https://stackoverflow.com/questions/tagged/bootstrap-5">
-                  Github
+              <li class="footer-list-item fw-light">
+                <a class="footer-link" href="#ternary-div">
+                  Students
                 </a>
               </li>
             </ul>
-          </Col>
-        </Row>
-      </Container>
-    </footer>
+          </div>
+        </div>
+        <div class="col-md-3 text-white justify-content-center">
+          <div class="ms-auto">
+            <ul class="footer-list">
+              <li class="footer-list-item fl-top">Pages</li>
+              <li class="footer-list-item fw-light">
+                <a class="footer-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li class="footer-list-item fw-light">
+                <a class="footer-link" href="">
+                  Login
+                </a>
+              </li>
+              <li class="footer-list-item fw-light">
+                <a class="footer-link" href="./form-start.html">
+                  Take the Assessment
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 text-white justify-content-center">
+          <div class="ms-auto">
+            <ul class="footer-list">
+              <li class="footer-list-item fw-light">© Joshua Prunty, 2023</li>
+              <li class="footer-list-item fw-light">
+                <button
+                  type="button"
+                  class="btn nav-link footer-link"
+                  data-bs-toggle="modal"
+                  data-bs-target="#about-modal"
+                >
+                  About Renu
+                </button>
+              </li>
+              <li class="footer-list-item fw-light">
+                <a class="footer-link" href="">
+                  Contact
+                </a>
+              </li>
+              <li class="footer-list-item fw-light">
+                <a class="footer-link" href="">
+                  Privacy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
