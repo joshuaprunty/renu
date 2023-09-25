@@ -1,25 +1,20 @@
 import React from "react";
 import "../styles/Home.css";
 
-function Form() {
+function FormOne() {
   return (
     <>
       <div class="container-fluid position-fixed vh-100 mt-5 mb-0">
         <div class="form-div-main bg-white h-100">
           <img id="form-background-img" src="./assets/NorthwesternN.png" />
           <div class="form-content d-grid gap-2 position-relative z-2">
-            <h1>Find your next course in under 10 minutes.</h1>
+            <h1>Basic Info</h1>
             <p>
-              Tell us about what you're looking for in upcoming classes, which
-              requirements you’d like to fulfill, and previous courses you’ve
-              taken.
+              This section will ask you basic info about your academic status at
+              Northwestern to help determine courses that fit you.
             </p>
-            <a
-              href="./formone.html"
-              class="btn btn-secondary btn-lg "
-              id="start-assessment-button"
-            >
-              Start Assessment
+            <a href="./form-q-year.html" class="btn btn-secondary btn-lg">
+              Next
             </a>
           </div>
         </div>
@@ -32,4 +27,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default FormOne;
