@@ -3,7 +3,7 @@ import "../styles/Home.css";
 
 function Footer() {
   return (
-    <div class="container-fluid footer-div">
+    <div class="container-fluid footer-div bg-dark">
       <div class="row justify-content-center">
         <div class="col-md-3 text-white justify-content-center">
           <div class="ms-auto">

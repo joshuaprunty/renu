@@ -1,0 +1,72 @@
+.form-div-main {
+  width: 85%;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 50px;
+}
+
+.form-progress-bar {
+  width: 15%;
+  background-color: #000000;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#start-assessment-button {
+  background-color: #443161 !important;
+}
+
+#start-assessment-button:hover {
+  background-color: #352060 !important;
+  transition-duration: 0.15s !important;
+}
+
+.form-content {
+  width: 86%;
+}
+
+.formq-content {
+  width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .form-progress-bar {
+    display: none;
+    width: 0;
+  }
+
+  .form-div-main {
+    width: 100%;
+  }
+}
+
+.check-square {
+  height: 20px;
+  width: 20px;
+  border-radius: 15%;
+  border: 2px solid #999999;
+  display: inline-block;
+}
+
+.check-square-selected {
+  /* Your styles for a filled-in check-square */
+  background-color: #4f2b85;
+}
+
+.form-background-img {
+  display: block;
+  height: 150%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}

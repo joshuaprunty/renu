@@ -10,9 +10,9 @@ function Quaternary() {
           <div class="col-sm-2"></div>
           <div class="col-sm-8 justify-content-center text-center ms-auto">
             <h2 class="text-white text-center mb-4">
-              Find your next class now
+              Find your next class now.
             </h2>
-            <a href="./form-start.html" class="btn btn-light btn-lg">
+            <a href="./form" class="btn btn-light btn-lg">
               Get Started
             </a>
           </div>

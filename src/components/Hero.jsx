@@ -11,7 +11,7 @@ function Hero() {
             Get tailored recommendations for major requirements, distros, and
             any other classes.
           </p>
-          <a href="./form-start.html" className="btn btn-outline-light btn-lg">
+          <a href="./form" className="btn btn-outline-light btn-lg">
             Get Started
           </a>
         </div>

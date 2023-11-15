@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Form from "./pages/Form";
-import FormOne from "./pages/FormOne";
+import FormContainer from "./pages/FormContainer";
 import Settings from "./pages/Settings";
 
 function App() {
@@ -14,9 +13,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="form" element={<Form />} />
-          <Route path="formone" element={<FormOne />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="form" element={<FormContainer />} />
         </Route>
       </Routes>
     </BrowserRouter>

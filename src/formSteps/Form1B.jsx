@@ -1,21 +1,30 @@
 import React from "react";
 import "../styles/Home.css";
+import "../styles/Form.css";
 
-function FormOne() {
+function Form1B({ nextStep }) {
+  const handleStartClick = () => {
+    nextStep();
+  };
+
   return (
     <>
       <div class="container-fluid position-fixed vh-100 mt-5 mb-0">
         <div class="form-div-main bg-white h-100">
-          <img id="form-background-img" src="./assets/NorthwesternN.png" />
+          <img id="form-background-img" src="src/assets/NorthwesternN.png" />
           <div class="form-content d-grid gap-2 position-relative z-2">
             <h1>Basic Info</h1>
             <p>
               This section will ask you basic info about your academic status at
               Northwestern to help determine courses that fit you.
             </p>
-            <a href="./form-q-year.html" class="btn btn-secondary btn-lg">
+            <button
+              onClick={handleStartClick}
+              className="btn btn-secondary btn-lg"
+              id="start-assessment-button"
+            >
               Next
-            </a>
+            </button>
           </div>
         </div>
         <div class="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
@@ -27,4 +36,4 @@ function FormOne() {
   );
 }
 
-export default FormOne;
+export default Form1B;
