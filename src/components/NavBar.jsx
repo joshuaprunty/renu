@@ -1,16 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import "../styles/App.css";
+import { NavLink } from "react-router-dom";
 
-function NavBar() {
+function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a
           className="navbar-brand"
           href="/"
           style={{
-            fontFamily: "Armin SB",
             fontSize: "2em",
             paddingTop: "0rem",
             paddingLeft: "0.8rem",
@@ -34,19 +32,42 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <NavLink
+                className="nav-link"
+                activeClassName="active"
+                aria-current="page"
+                to="/"
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <NavLink
+                className="nav-link"
+                activeClassName="active"
+                aria-current="page"
+                to="/form"
+              >
+                Get Started
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                activeClassName="active"
+                to="/about"
+              >
                 About
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/settings">
-                Settings
-              </a>
+              <NavLink
+                className="nav-link"
+                activeClassName="active"
+                to="/settings"
+              >
+                Login
+              </NavLink>
             </li>
             <li>
               <a
@@ -81,4 +102,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
