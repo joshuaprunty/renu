@@ -2,21 +2,29 @@ import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 
-// Select School
+// What Reqs to Fulfill
 
-function Form2B({ nextStep }) {
-  const [selectedSchool, setSelectedSchool] = useState(null);
-  const schools = [
-    "Weinberg",
-    "McCormick",
-    "Medill",
-    "Bienen",
-    "Communications",
-    "SESP",
+function Form2D({ nextStep }) {
+  const [selectedFulfills, setSelectedFulfills] = useState([]);
+  const fulfills = [
+    "Foundational Discipline (Distro)",
+    "Major/Minor Requirement",
+    "Certificate Requirement",
+    "Seminar",
+    "Language Requirement",
+    "Other",
   ];
 
-  function handleSchoolClick(schoolIndex) {
-    setSelectedSchool(schoolIndex);
+  function handleFulfillsClick(fulfillsIndex) {
+    if (selectedFulfills.includes(fulfillsIndex)) {
+      // If already selected, remove it from the array
+      setSelectedFulfills(
+        selectedFulfills.filter((index) => index !== fulfillsIndex)
+      );
+    } else {
+      // If not selected, add it to the array
+      setSelectedFulfills([...selectedFulfills, fulfillsIndex]);
+    }
   }
 
   const handleStartClick = () => {
@@ -31,19 +39,21 @@ function Form2B({ nextStep }) {
           src="src/assets/NorthwesternN.png"
         />
         <div className="formq-content d-grid gap-2 position-relative z-2">
-          <h2>Your School/College:</h2>
-          {schools.map((school, index) => (
+          <h2>What requirement(s) are you looking to fulfill?</h2>
+          {fulfills.map((fulfill, index) => (
             <button
               key={index}
               className="btn btn-outline-secondary d-flex align-items-center py-3"
-              onClick={() => handleSchoolClick(index + 1)}
+              onClick={() => handleFulfillsClick(index + 1)}
             >
               <div
                 className={`check-square ms-4 ${
-                  selectedSchool === index + 1 ? "check-square-selected" : ""
+                  selectedFulfills.includes(index + 1)
+                    ? "check-square-selected"
+                    : ""
                 }`}
               ></div>
-              <span className="form-option-text ms-5 fs-5">{school}</span>
+              <span className="form-option-text ms-5 fs-5">{fulfill}</span>
             </button>
           ))}
           <button
@@ -63,4 +73,4 @@ function Form2B({ nextStep }) {
   );
 }
 
-export default Form2B;
+export default Form2D;

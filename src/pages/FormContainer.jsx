@@ -3,6 +3,11 @@ import Form1A from "../formSteps/Form1A";
 import Form1B from "../formSteps/Form1B";
 import Form2A from "../formSteps/Form2A";
 import Form2B from "../formSteps/Form2B";
+import Form2C from "../formSteps/Form2C";
+import Form2D from "../formSteps/Form2D";
+import Form3A from "../formSteps/Form3A";
+import Form3B from "../formSteps/Form3B";
+import Form3C from "../formSteps/Form3C";
 
 function MultiStepForm() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -33,6 +38,16 @@ function MultiStepForm() {
         return <Form2A updateFormData={updateFormData} nextStep={nextStep} />;
       case 4:
         return <Form2B updateFormData={updateFormData} nextStep={nextStep} />;
+      case 5:
+        return <Form2C updateFormData={updateFormData} nextStep={nextStep} />;
+      case 6:
+        return <Form2D updateFormData={updateFormData} nextStep={nextStep} />;
+      case 7:
+        return <Form3A updateFormData={updateFormData} nextStep={nextStep} />;
+      case 8:
+        return <Form3B updateFormData={updateFormData} nextStep={nextStep} />;
+      case 9:
+        return <Form3C updateFormData={updateFormData} nextStep={nextStep} />;
       default:
         return <div>Form Completed</div>;
     }

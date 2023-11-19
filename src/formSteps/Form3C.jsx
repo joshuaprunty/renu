@@ -2,21 +2,19 @@ import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 
-// Select School
+// Location
 
-function Form2B({ nextStep }) {
-  const [selectedSchool, setSelectedSchool] = useState(null);
-  const schools = [
-    "Weinberg",
-    "McCormick",
-    "Medill",
-    "Bienen",
-    "Communications",
-    "SESP",
+function Form3C({ nextStep }) {
+  const [selectedLoc, setSelectedLoc] = useState(null);
+  const locs = [
+    "North Campus",
+    "Central Campus",
+    "South Campus",
+    "No Preference",
   ];
 
-  function handleSchoolClick(schoolIndex) {
-    setSelectedSchool(schoolIndex);
+  function handleLocClick(locIndex) {
+    setSelectedLoc(locIndex);
   }
 
   const handleStartClick = () => {
@@ -31,19 +29,19 @@ function Form2B({ nextStep }) {
           src="src/assets/NorthwesternN.png"
         />
         <div className="formq-content d-grid gap-2 position-relative z-2">
-          <h2>Your School/College:</h2>
-          {schools.map((school, index) => (
+          <h2>I am looking for a course that is located on/near:</h2>
+          {locs.map((loc, index) => (
             <button
               key={index}
               className="btn btn-outline-secondary d-flex align-items-center py-3"
-              onClick={() => handleSchoolClick(index + 1)}
+              onClick={() => handleLocClick(index + 1)}
             >
               <div
                 className={`check-square ms-4 ${
-                  selectedSchool === index + 1 ? "check-square-selected" : ""
+                  selectedLoc === index + 1 ? "check-square-selected" : ""
                 }`}
               ></div>
-              <span className="form-option-text ms-5 fs-5">{school}</span>
+              <span className="form-option-text ms-5 fs-5">{loc}</span>
             </button>
           ))}
           <button
@@ -63,4 +61,4 @@ function Form2B({ nextStep }) {
   );
 }
 
-export default Form2B;
+export default Form3C;

@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 
+// Initial Screen
+
 function Form1A({ nextStep }) {
   const handleStartClick = () => {
     nextStep();

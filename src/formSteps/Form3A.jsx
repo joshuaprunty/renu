@@ -2,9 +2,9 @@ import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 
-// Basic Info Section - Initial
+// Preferences Section Init
 
-function Form1B({ nextStep }) {
+function Form3A({ nextStep }) {
   const handleStartClick = () => {
     nextStep();
   };
@@ -15,10 +15,10 @@ function Form1B({ nextStep }) {
         <div class="form-div-main bg-white h-100">
           <img id="form-background-img" src="src/assets/NorthwesternN.png" />
           <div class="form-content d-grid gap-2 position-relative z-2">
-            <h1>Basic Info</h1>
+            <h1>Preference Questions</h1>
             <p>
-              This section will ask you basic info about your academic status at
-              Northwestern to help determine courses that fit you.
+              This section will ask you to specify preferences about specific
+              class attributes
             </p>
             <button
               onClick={handleStartClick}
@@ -38,4 +38,4 @@ function Form1B({ nextStep }) {
   );
 }
 
-export default Form1B;
+export default Form3A;
