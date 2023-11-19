@@ -38,6 +38,7 @@ function MultiStepForm() {
         return <Form2A updateFormData={updateFormData} nextStep={nextStep} />;
       case 4:
         return <Form2B updateFormData={updateFormData} nextStep={nextStep} />;
+<<<<<<< HEAD
       case 5:
         return <Form2C updateFormData={updateFormData} nextStep={nextStep} />;
       case 6:
@@ -48,6 +49,8 @@ function MultiStepForm() {
         return <Form3B updateFormData={updateFormData} nextStep={nextStep} />;
       case 9:
         return <Form3C updateFormData={updateFormData} nextStep={nextStep} />;
+=======
+>>>>>>> 355797369da7e5d5912770d9434613ebc2a51636
       default:
         return <div>Form Completed</div>;
     }

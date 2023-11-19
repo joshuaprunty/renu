@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 
+<<<<<<< HEAD
 // Select Year
 
+=======
+>>>>>>> 355797369da7e5d5912770d9434613ebc2a51636
 function Form2A({ nextStep }) {
   const [selectedYear, setSelectedYear] = useState(null);
   const years = [

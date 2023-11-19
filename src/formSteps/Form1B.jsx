@@ -2,8 +2,11 @@ import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 
+<<<<<<< HEAD
 // Basic Info Section - Initial
 
+=======
+>>>>>>> 355797369da7e5d5912770d9434613ebc2a51636
 function Form1B({ nextStep }) {
   const handleStartClick = () => {
     nextStep();
