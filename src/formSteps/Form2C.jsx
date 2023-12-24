@@ -4,9 +4,13 @@ import "../styles/Form.css";
 
 // Select Majors and Minors
 
-function Form2C({ nextStep }) {
-  const [selectedMajors, setSelectedMajors] = useState([]);
-  const [selectedMinors, setSelectedMinors] = useState([]);
+function Form2C({
+  currMajors,
+  currMinors,
+  updateFormData,
+  nextStep,
+  backStep,
+}) {
   const exampleOptions = [
     "Biology",
     "Computer Science",
@@ -19,29 +23,83 @@ function Form2C({ nextStep }) {
     "Political Science",
     "Psychology",
   ];
+  const [selectedMajors, setSelectedMajors] = useState(
+    currMajors.map((major) => exampleOptions.indexOf(major))
+  );
+  const [selectedMinors, setSelectedMinors] = useState(
+    currMinors.map((minor) => exampleOptions.indexOf(minor))
+  );
 
-  const handleStartClick = () => {
-    nextStep();
-  };
+  const handleNextClick = () => {
+    if (selectedMajors.length > 0 || selectedMinors.length > 0) {
+      const updates = {};
 
-  const handleSelectMajor = (event) => {
-    if (!selectedMajors.includes(event.target.value)) {
-      setSelectedMajors([...selectedMajors, event.target.value]);
+      if (selectedMajors.length > 0) {
+        const selectedMajorValues = selectedMajors.map(
+          (index) => exampleOptions[index]
+        );
+        updates.majors = selectedMajorValues;
+      }
+
+      if (selectedMinors.length > 0) {
+        const selectedMinorValues = selectedMinors.map(
+          (index) => exampleOptions[index]
+        );
+        updates.minors = selectedMinorValues;
+      }
+
+      // Single update call with all the changes
+      updateFormData(updates);
+      nextStep();
+    } else {
+      console.log("Please select at least one major or minor to proceed.");
     }
   };
 
-  const handleRemoveMajor = (major) => {
-    setSelectedMajors(selectedMajors.filter((m) => m !== major));
+  const handleBackClick = () => {
+    backStep();
+  };
+
+  // const handleSelectMajor = (event) => {
+  //   if (!selectedMajors.includes(event.target.value)) {
+  //     setSelectedMajors([...selectedMajors, event.target.value]);
+  //   }
+  // };
+
+  // const handleRemoveMajor = (major) => {
+  //   setSelectedMajors(selectedMajors.filter((m) => m !== major));
+  // };
+
+  // const handleSelectMinor = (event) => {
+  //   if (!selectedMinors.includes(event.target.value)) {
+  //     setSelectedMinors([...selectedMinors, event.target.value]);
+  //   }
+  // };
+
+  // const handleRemoveMinor = (minor) => {
+  //   setSelectedMinors(selectedMinors.filter((m) => m !== minor));
+  // };
+
+  const handleSelectMajor = (event) => {
+    const index = exampleOptions.indexOf(event.target.value);
+    if (index >= 0 && !selectedMajors.includes(index)) {
+      setSelectedMajors([...selectedMajors, index]);
+    }
+  };
+
+  const handleRemoveMajor = (index) => {
+    setSelectedMajors(selectedMajors.filter((i) => i !== index));
   };
 
   const handleSelectMinor = (event) => {
-    if (!selectedMinors.includes(event.target.value)) {
-      setSelectedMinors([...selectedMinors, event.target.value]);
+    const index = exampleOptions.indexOf(event.target.value);
+    if (index >= 0 && !selectedMinors.includes(index)) {
+      setSelectedMinors([...selectedMinors, index]);
     }
   };
 
-  const handleRemoveMinor = (minor) => {
-    setSelectedMinors(selectedMinors.filter((m) => m !== minor));
+  const handleRemoveMinor = (index) => {
+    setSelectedMinors(selectedMinors.filter((i) => i !== index));
   };
 
   return (
@@ -72,7 +130,7 @@ function Form2C({ nextStep }) {
             <div className="selected-items">
               {selectedMajors.map((major, index) => (
                 <div key={index} className="selected-item">
-                  {major}{" "}
+                  {exampleOptions[major]}{" "}
                   <button onClick={() => handleRemoveMajor(major)}>X</button>
                 </div>
               ))}
@@ -95,20 +153,29 @@ function Form2C({ nextStep }) {
             <div className="selected-items">
               {selectedMinors.map((minor, index) => (
                 <div key={index} className="selected-item">
-                  {minor}{" "}
+                  {exampleOptions[minor]}{" "}
                   <button onClick={() => handleRemoveMinor(minor)}>X</button>
                 </div>
               ))}
             </div>
           </div>
 
-          <button
-            onClick={handleStartClick}
-            className="btn btn-secondary btn-lg"
-            id="start-assessment-button"
-          >
-            Next
-          </button>
+          <span>
+            <button
+              onClick={handleBackClick}
+              className="btn btn-secondary btn-lg"
+              id="back-assessment-button"
+            >
+              Back
+            </button>
+            <button
+              onClick={handleNextClick}
+              className="btn btn-secondary btn-lg"
+              id="start-assessment-button"
+            >
+              Next
+            </button>
+          </span>
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

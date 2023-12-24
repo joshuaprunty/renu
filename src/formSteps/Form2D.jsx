@@ -4,8 +4,7 @@ import "../styles/Form.css";
 
 // What Reqs to Fulfill
 
-function Form2D({ nextStep }) {
-  const [selectedFulfills, setSelectedFulfills] = useState([]);
+function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
   const fulfills = [
     "Foundational Discipline (Distro)",
     "Major/Minor Requirement",
@@ -14,6 +13,9 @@ function Form2D({ nextStep }) {
     "Language Requirement",
     "Other",
   ];
+  const [selectedFulfills, setSelectedFulfills] = useState(
+    currFulfill.map((value) => fulfills.indexOf(value))
+  );
 
   function handleFulfillsClick(fulfillsIndex) {
     if (selectedFulfills.includes(fulfillsIndex)) {
@@ -27,8 +29,26 @@ function Form2D({ nextStep }) {
     }
   }
 
-  const handleStartClick = () => {
-    nextStep();
+  const handleNextClick = () => {
+    if (selectedFulfills.length > 0) {
+      // Transform the indices into actual time values
+      const selectedFulfillValues = selectedFulfills.map(
+        (index) => fulfills[index - 1]
+      );
+
+      // Update the form data with the array of selected times
+      updateFormData({ fulfills: selectedFulfillValues });
+
+      // Proceed to the next step
+      nextStep();
+    } else {
+      // Handle the case where no options are selected
+      console.log("Please select at least one area to proceed.");
+    }
+  };
+
+  const handleBackClick = () => {
+    backStep();
   };
 
   return (
@@ -56,13 +76,22 @@ function Form2D({ nextStep }) {
               <span className="form-option-text ms-5 fs-5">{fulfill}</span>
             </button>
           ))}
-          <button
-            onClick={handleStartClick}
-            className="btn btn-secondary btn-lg"
-            id="start-assessment-button"
-          >
-            Next
-          </button>
+          <span>
+            <button
+              onClick={handleBackClick}
+              className="btn btn-secondary btn-lg"
+              id="back-assessment-button"
+            >
+              Back
+            </button>
+            <button
+              onClick={handleNextClick}
+              className="btn btn-secondary btn-lg"
+              id="start-assessment-button"
+            >
+              Next
+            </button>
+          </span>
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

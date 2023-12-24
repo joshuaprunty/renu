@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 
-// Initial Screen
+// Intro Screen
 
 function Form1A({ nextStep }) {
   const handleStartClick = () => {

@@ -4,9 +4,13 @@ import "../styles/Form.css";
 
 // Preferences Section Init
 
-function Form3A({ nextStep }) {
-  const handleStartClick = () => {
+function Form3A({ updateFormData, nextStep, backStep }) {
+  const handleNextClick = () => {
     nextStep();
+  };
+
+  const handleBackClick = () => {
+    backStep();
   };
 
   return (
@@ -20,13 +24,22 @@ function Form3A({ nextStep }) {
               This section will ask you to specify preferences about specific
               class attributes
             </p>
-            <button
-              onClick={handleStartClick}
-              className="btn btn-secondary btn-lg"
-              id="start-assessment-button"
-            >
-              Next
-            </button>
+            <span>
+              <button
+                onClick={handleBackClick}
+                className="btn btn-secondary btn-lg"
+                id="back-assessment-button"
+              >
+                Back
+              </button>
+              <button
+                onClick={handleNextClick}
+                className="btn btn-secondary btn-lg"
+                id="start-assessment-button"
+              >
+                Next
+              </button>
+            </span>
           </div>
         </div>
         <div class="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

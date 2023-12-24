@@ -4,21 +4,29 @@ import "../styles/Form.css";
 
 // Location
 
-function Form3C({ nextStep }) {
-  const [selectedLoc, setSelectedLoc] = useState(null);
+function Form3C({ currLoc, updateFormData, nextStep, backStep }) {
   const locs = [
     "North Campus",
     "Central Campus",
     "South Campus",
     "No Preference",
   ];
-
+  const [selectedLoc, setSelectedLoc] = useState(locs.indexOf(currLoc));
   function handleLocClick(locIndex) {
     setSelectedLoc(locIndex);
   }
 
-  const handleStartClick = () => {
-    nextStep();
+  const handleNextClick = () => {
+    if (selectedLoc != null) {
+      updateFormData({ loc: locs[selectedLoc - 1] });
+      nextStep();
+    } else {
+      console.log("Please select a location to proceed.");
+    }
+  };
+
+  const handleBackClick = () => {
+    backStep();
   };
 
   return (
@@ -44,13 +52,22 @@ function Form3C({ nextStep }) {
               <span className="form-option-text ms-5 fs-5">{loc}</span>
             </button>
           ))}
-          <button
-            onClick={handleStartClick}
-            className="btn btn-secondary btn-lg"
-            id="start-assessment-button"
-          >
-            Next
-          </button>
+          <span>
+            <button
+              onClick={handleBackClick}
+              className="btn btn-secondary btn-lg"
+              id="back-assessment-button"
+            >
+              Back
+            </button>
+            <button
+              onClick={handleNextClick}
+              className="btn btn-secondary btn-lg"
+              id="start-assessment-button"
+            >
+              Next
+            </button>
+          </span>
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

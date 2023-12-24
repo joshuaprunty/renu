@@ -4,8 +4,7 @@ import "../styles/Form.css";
 
 // Select School
 
-function Form2B({ nextStep }) {
-  const [selectedSchool, setSelectedSchool] = useState(null);
+function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
   const schools = [
     "Weinberg",
     "McCormick",
@@ -14,13 +13,25 @@ function Form2B({ nextStep }) {
     "Communications",
     "SESP",
   ];
+  const [selectedSchool, setSelectedSchool] = useState(
+    schools.indexOf(currSchool) + 1
+  );
 
   function handleSchoolClick(schoolIndex) {
     setSelectedSchool(schoolIndex);
   }
 
-  const handleStartClick = () => {
-    nextStep();
+  const handleNextClick = () => {
+    if (selectedSchool != null) {
+      updateFormData({ school: schools[selectedSchool - 1] });
+      nextStep();
+    } else {
+      console.log("Please select a school to proceed.");
+    }
+  };
+
+  const handleBackClick = () => {
+    backStep();
   };
 
   return (
@@ -46,13 +57,22 @@ function Form2B({ nextStep }) {
               <span className="form-option-text ms-5 fs-5">{school}</span>
             </button>
           ))}
-          <button
-            onClick={handleStartClick}
-            className="btn btn-secondary btn-lg"
-            id="start-assessment-button"
-          >
-            Next
-          </button>
+          <span>
+            <button
+              onClick={handleBackClick}
+              className="btn btn-secondary btn-lg"
+              id="back-assessment-button"
+            >
+              Back
+            </button>
+            <button
+              onClick={handleNextClick}
+              className="btn btn-secondary btn-lg"
+              id="start-assessment-button"
+            >
+              Next
+            </button>
+          </span>
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

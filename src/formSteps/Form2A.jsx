@@ -4,8 +4,7 @@ import "../styles/Form.css";
 
 // Select Year
 
-function Form2A({ nextStep }) {
-  const [selectedYear, setSelectedYear] = useState(null);
+function Form2A({ currYear, updateFormData, nextStep, backStep }) {
   const years = [
     "First Year",
     "Second Year",
@@ -14,13 +13,23 @@ function Form2A({ nextStep }) {
     "Fifth Year",
     "Sixth Year",
   ];
+  const [selectedYear, setSelectedYear] = useState(years.indexOf(currYear) + 1);
 
   function handleYearClick(yearIndex) {
     setSelectedYear(yearIndex);
   }
 
-  const handleStartClick = () => {
-    nextStep();
+  const handleNextClick = () => {
+    if (selectedYear != null) {
+      updateFormData({ year: years[selectedYear - 1] });
+      nextStep();
+    } else {
+      console.log("Please select a year to proceed.");
+    }
+  };
+
+  const handleBackClick = () => {
+    backStep();
   };
 
   return (
@@ -46,13 +55,22 @@ function Form2A({ nextStep }) {
               <span className="form-option-text ms-5 fs-5">{year}</span>
             </button>
           ))}
-          <button
-            onClick={handleStartClick}
-            className="btn btn-secondary btn-lg"
-            id="start-assessment-button"
-          >
-            Next
-          </button>
+          <span>
+            <button
+              onClick={handleBackClick}
+              className="btn btn-secondary btn-lg"
+              id="back-assessment-button"
+            >
+              Back
+            </button>
+            <button
+              onClick={handleNextClick}
+              className="btn btn-secondary btn-lg"
+              id="start-assessment-button"
+            >
+              Next
+            </button>
+          </span>
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
