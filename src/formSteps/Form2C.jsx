@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
+import BackNext from "../components/BackNext";
 
 // Select Majors and Minors
 
@@ -160,22 +161,10 @@ function Form2C({
             </div>
           </div>
 
-          <span>
-            <button
-              onClick={handleBackClick}
-              className="btn btn-secondary btn-lg"
-              id="back-assessment-button"
-            >
-              Back
-            </button>
-            <button
-              onClick={handleNextClick}
-              className="btn btn-secondary btn-lg"
-              id="start-assessment-button"
-            >
-              Next
-            </button>
-          </span>
+          <BackNext
+            handleBackClick={handleBackClick}
+            handleNextClick={handleNextClick}
+          />
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

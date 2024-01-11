@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
+import BackNext from "../components/BackNext";
 
 // What Reqs to Fulfill
 
@@ -76,22 +77,10 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
               <span className="form-option-text ms-5 fs-5">{fulfill}</span>
             </button>
           ))}
-          <span>
-            <button
-              onClick={handleBackClick}
-              className="btn btn-secondary btn-lg"
-              id="back-assessment-button"
-            >
-              Back
-            </button>
-            <button
-              onClick={handleNextClick}
-              className="btn btn-secondary btn-lg"
-              id="start-assessment-button"
-            >
-              Next
-            </button>
-          </span>
+          <BackNext
+            handleBackClick={handleBackClick}
+            handleNextClick={handleNextClick}
+          />
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

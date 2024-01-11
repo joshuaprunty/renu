@@ -1,35 +1,39 @@
-GENERAL, ORGANIZATION, PROJECT STRUCTURE 
-----------------------------------------------------------------
-- Break down components into smaller nested files
-- Separate CSS Stylesheets
-- Code Comments
+- Add about page content
 
+- Remove Login tab (User functionality is way down the line)
 
-COMPONENTS TO ADD 
-----------------------------------------------------------------
+- Better version control overall
 
+- Add remaining form page frontends
+    - Can 'comment these out' when starting backend functionality
+    - But should have wireframes at the very least, for mental organization
 
-HOMEPAGE 
-----------------------------------------------------------------
-- Stylize/Complete Footer
-- Additional Sections and Info
+- Update version number (make some shit up)
 
-ADDITIONAL PAGES AND LINKS
-----------------------------------------------------------------
-- Contact Page
-- Course Database Explore
+- Fix Form UI issues
+    - Checkboxes get distorted on page resize
+    - Center Back and Next buttons
+    - Recolor some things (like button hover) since it looks dookie
+    - Majors Page: Redo dropdown if possible, fix the 'x' button (looks like it's from 2004)
+    - Majors Page: More general UI overhaul. 
+    - Reqs Page: center text (make sure this isn't an issue on other pages - probably is)
 
-FORM 
-----------------------------------------------------------------
-- Finalize Questions/Workflow
+- Add a strawman loading page and results page
+    - Again this is kinda for mental clarity and visualizing the roadmap
+    - Want a good looking frontend, if not functional, before moving into backend
 
-STARTING BACKEND 
-----------------------------------------------------------------
-- Python, Selenium, MongoDB
-- Check in on API Access progress
-- Meantime - Webscrape for Courses
+- Footer Links (Later Priority)
+    - How it works -> about
+    - Students -> Login
+    - About Renu -> about
+    - Contact -> Modal(?)
+    - Privacy -> Modal
 
+- Later on, tweak responsiveness and look into mobile UI
+    - But get a semi-functional desktop site first!
 
-MISC
-----------------------------------------------------------------
-- New Font (Armin SF is a demo - missing chars)
+LEARNING & MAJOR MOVES
+- Get a response from the IT department (I'm begging)
+- Choose a database service (Make it work - could be possible to hold classes locally
+  but this is a learning project - learn some cloud service and database stuff)
+- Figure out a structure and language (Stack) for backend integration

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
+import BackNext from "../components/BackNext";
 
 // Preferences Section Init
 
@@ -24,22 +25,10 @@ function Form3A({ updateFormData, nextStep, backStep }) {
               This section will ask you to specify preferences about specific
               class attributes
             </p>
-            <span>
-              <button
-                onClick={handleBackClick}
-                className="btn btn-secondary btn-lg"
-                id="back-assessment-button"
-              >
-                Back
-              </button>
-              <button
-                onClick={handleNextClick}
-                className="btn btn-secondary btn-lg"
-                id="start-assessment-button"
-              >
-                Next
-              </button>
-            </span>
+            <BackNext
+              handleBackClick={handleBackClick}
+              handleNextClick={handleNextClick}
+            />
           </div>
         </div>
         <div class="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
