@@ -1,11 +1,13 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
-import "../styles/Home.css";
+import BackNext from "../components/Form/BackNext";
 import "../styles/Form.css";
-import BackNext from "../components/BackNext";
 
-// Select Year
-
+// MAIN
+//-------------------------------------------------------------------------------------------------------
 function Form2A({ currYear, updateFormData, nextStep, backStep }) {
+  // Content Variables --------------------------------------------
   const years = [
     "First Year",
     "Second Year",
@@ -14,12 +16,16 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
     "Fifth Year",
     "Sixth Year",
   ];
+
+  // UseState Variables -------------------------------------------------
   const [selectedYear, setSelectedYear] = useState(years.indexOf(currYear) + 1);
 
-  function handleYearClick(yearIndex) {
+  // Function Declarations ----------------------------------------------
+  const handleYearClick = (yearIndex) => {
     setSelectedYear(yearIndex);
-  }
+  };
 
+  // Next
   const handleNextClick = () => {
     if (selectedYear != null) {
       updateFormData({ year: years[selectedYear - 1] });
@@ -29,13 +35,19 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
     }
   };
 
+  // Back
   const handleBackClick = () => {
     backStep();
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
+      {" "}
+      {/*Container*/}
       <div className="form-div-main bg-white h-100">
+        {" "}
+        {/*Form Div*/}
         <img
           className="form-background-img"
           src="src/assets/NorthwesternN.png"
@@ -53,7 +65,7 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
                   selectedYear === index + 1 ? "check-square-selected" : ""
                 }`}
               ></div>
-              <span className="form-option-text ms-5 fs-5">{year}</span>
+              <span className="form-option-text ms-lg-5 ms-3 fs-5">{year}</span>
             </button>
           ))}
           <BackNext
@@ -70,4 +82,5 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
   );
 }
 
+// Export
 export default Form2A;

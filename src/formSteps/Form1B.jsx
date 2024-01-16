@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
-import BackNext from "../components/BackNext";
+import BackNext from "../components/Form/BackNext";
 
 // Basic Info Section - Initial
 
@@ -16,12 +16,12 @@ function Form1B({ nextStep, backStep }) {
 
   return (
     <>
-      <div class="container-fluid position-fixed vh-100 mt-5 mb-0">
-        <div class="form-div-main bg-white h-100">
+      <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
+        <div className="form-div-main bg-white h-100">
           <img id="form-background-img" src="src/assets/NorthwesternN.png" />
-          <div class="form-content d-grid gap-2 position-relative z-2">
-            <h1>Basic Info</h1>
-            <p>
+          <div className="form-content d-grid gap-2 position-relative z-2">
+            <h1 className="text-center">Basic Info</h1>
+            <p className="text-center px-5">
               This section will ask you basic info about your academic status at
               Northwestern to help determine courses that fit you.
             </p>
@@ -31,9 +31,9 @@ function Form1B({ nextStep, backStep }) {
             />
           </div>
         </div>
-        <div class="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
-          <div class="p-b-left h-100"></div>
-          <div class="p-b-right h-100"></div>
+        <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
+          <div className="p-b-left h-100"></div>
+          <div className="p-b-right h-100"></div>
         </div>
       </div>
     </>

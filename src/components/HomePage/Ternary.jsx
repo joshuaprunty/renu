@@ -1,6 +1,10 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
-import "../styles/Home.css";
+import "/src/styles/Home.css";
 
+// MAIN
+//-------------------------------------------------------------------------------------------------------
 function Ternary() {
   return (
     <div class="ternary-div container-fluid py-5" id="ternary-div">
@@ -46,4 +50,5 @@ function Ternary() {
   );
 }
 
+// Export
 export default Ternary;

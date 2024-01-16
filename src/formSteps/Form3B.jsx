@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
-import BackNext from "../components/BackNext";
+import BackNext from "../components/Form/BackNext";
 
 // Challenge Level
 
@@ -45,7 +45,9 @@ function Form3B({ currDiff, updateFormData, nextStep, backStep }) {
                   selectedDiff === index + 1 ? "check-square-selected" : ""
                 }`}
               ></div>
-              <span className="form-option-text ms-5 fs-5">{diff}</span>
+              <span className="form-option-text text-start ms-3 fs-5">
+                {diff}
+              </span>
             </button>
           ))}
           <BackNext

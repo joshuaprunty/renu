@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
-import BackNext from "../components/BackNext";
+import BackNext from "../components/Form/BackNext";
 
 // Select School
 
@@ -55,7 +55,9 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
                   selectedSchool === index + 1 ? "check-square-selected" : ""
                 }`}
               ></div>
-              <span className="form-option-text ms-5 fs-5">{school}</span>
+              <span className="form-option-text ms-lg-5 ms-3 fs-5">
+                {school}
+              </span>
             </button>
           ))}
           <BackNext

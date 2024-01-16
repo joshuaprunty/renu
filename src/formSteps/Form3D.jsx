@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
-import BackNext from "../components/BackNext";
+import BackNext from "../components/Form/BackNext";
 
 // Meeting Days
 
@@ -50,7 +50,9 @@ function Form3D({ currDay, updateFormData, nextStep, backStep }) {
                   selectedDay === index + 1 ? "check-square-selected" : ""
                 }`}
               ></div>
-              <span className="form-option-text ms-5 fs-5">{day}</span>
+              <span className="form-option-text ms-3 text-start fs-5">
+                {day}
+              </span>
             </button>
           ))}
           <BackNext

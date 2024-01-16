@@ -1,6 +1,10 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
-import "../styles/Home.css";
+import "/src/styles/Home.css";
 
+// MAIN
+//-------------------------------------------------------------------------------------------------------
 function Quaternary() {
   return (
     <div class="quaternary-div container-fluid" id="quaternary-div">
@@ -23,4 +27,5 @@ function Quaternary() {
   );
 }
 
+// Export
 export default Quaternary;

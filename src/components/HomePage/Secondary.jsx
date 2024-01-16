@@ -1,7 +1,11 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
-import "../styles/LandingCard.css";
-import "../styles/Home.css";
+import "/src/styles/LandingCard.css";
+import "/src/styles/Home.css";
 
+// MAIN
+//-------------------------------------------------------------------------------------------------------
 function Secondary() {
   return (
     <div class="container-fluid bg-white py-5 secondary-div" id="secondary-div">
@@ -54,4 +58,5 @@ function Secondary() {
   );
 }
 
+// Export
 export default Secondary;

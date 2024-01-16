@@ -1,6 +1,10 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
 import "../styles/Home.css";
 
+// MAIN
+//-------------------------------------------------------------------------------------------------------
 function Footer() {
   return (
     <div class="container-fluid footer-div bg-dark">
@@ -93,4 +97,5 @@ function Footer() {
   );
 }
 
+// Export
 export default Footer;

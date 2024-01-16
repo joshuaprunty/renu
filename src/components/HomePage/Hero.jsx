@@ -1,6 +1,10 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
-import "../styles/Home.css";
+import "/src/styles/Home.css";
 
+// MAIN
+//-------------------------------------------------------------------------------------------------------
 function Hero() {
   return (
     <div className="hero-div container-fluid" id="hero-div">
@@ -26,4 +30,5 @@ function Hero() {
   );
 }
 
+//Export
 export default Hero;

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
-import BackNext from "../components/BackNext";
+import BackNext from "../components/Form/BackNext";
 
 // What Reqs to Fulfill
 
 function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
   const fulfills = [
-    "Foundational Discipline (Distro)",
+    "Foundational Discipline",
     "Major/Minor Requirement",
     "Certificate Requirement",
     "Seminar",
@@ -74,7 +74,9 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
                     : ""
                 }`}
               ></div>
-              <span className="form-option-text ms-5 fs-5">{fulfill}</span>
+              <span className="form-option-text text-start ms-lg-5 ms-3 fs-5">
+                {fulfill}
+              </span>
             </button>
           ))}
           <BackNext
