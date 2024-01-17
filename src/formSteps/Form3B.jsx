@@ -1,18 +1,22 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// Challenge Level
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form3B({ currDiff, updateFormData, nextStep, backStep }) {
+  // Content Variables --------------------------------------------
   const diffs = ["1 (Easy A)", "2", "3 (Average)", "4", "5 (Most Challenging)"];
+
+  // UseState Variables -------------------------------------------------
   const [selectedDiff, setSelectedDiff] = useState(diffs.indexOf(currDiff));
-  function handleDiffClick(diffIndex) {
-    setSelectedDiff(diffIndex);
-  }
+
   const [errorState, setErrorState] = useState(false);
 
+  // Function Declarations ----------------------------------------------
   const handleNextClick = () => {
     if (selectedDiff != -1) {
       updateFormData({ diff: diffs[selectedDiff - 1] });
@@ -26,6 +30,11 @@ function Form3B({ currDiff, updateFormData, nextStep, backStep }) {
     backStep();
   };
 
+  function handleDiffClick(diffIndex) {
+    setSelectedDiff(diffIndex);
+  }
+
+  // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
       <div className="form-div-main bg-white h-100">
@@ -70,4 +79,5 @@ function Form3B({ currDiff, updateFormData, nextStep, backStep }) {
   );
 }
 
+// Export
 export default Form3B;

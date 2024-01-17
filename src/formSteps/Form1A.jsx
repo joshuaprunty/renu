@@ -1,14 +1,18 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 
-// Intro Screen
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form1A({ nextStep }) {
+  // Function Declarations ----------------------------------------------
   const handleStartClick = () => {
     nextStep();
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <>
       <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
@@ -42,4 +46,5 @@ function Form1A({ nextStep }) {
   );
 }
 
+// Export
 export default Form1A;

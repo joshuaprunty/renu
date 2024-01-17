@@ -1,11 +1,14 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// Select School
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
+  // Content Variables --------------------------------------------
   const schools = [
     "Weinberg",
     "McCormick",
@@ -14,12 +17,15 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
     "Communications",
     "SESP",
   ];
+
+  // UseState Variables -------------------------------------------------
   const [selectedSchool, setSelectedSchool] = useState(
     schools.indexOf(currSchool) + 1
   );
 
   const [errorState, setErrorState] = useState(false);
 
+  // Function Declarations ----------------------------------------------
   function handleSchoolClick(schoolIndex) {
     setSelectedSchool(schoolIndex);
     setErrorState(false);
@@ -39,6 +45,7 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
     backStep();
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
       <div className="form-div-main bg-white h-100">
@@ -83,4 +90,5 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
   );
 }
 
+// Export
 export default Form2B;

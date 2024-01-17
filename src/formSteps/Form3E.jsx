@@ -1,17 +1,20 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// Meeting Time
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form3E({ currTime, updateFormData, nextStep, backStep }) {
+  // Content Variables --------------------------------------------
   const times = ["Morning", "Afternoon", "Evening", "No Preference"];
-  const [selectedTime, setSelectedTime] = useState(times.indexOf(currTime));
-  function handleTimeClick(timeIndex) {
-    setSelectedTime(timeIndex);
-  }
 
+  // UseState Variables -------------------------------------------------
+  const [selectedTime, setSelectedTime] = useState(times.indexOf(currTime));
+
+  // Function Declarations ----------------------------------------------
   const handleNextClick = () => {
     if (selectedTime != -1) {
       updateFormData({ time: times[selectedTime - 1] });
@@ -26,6 +29,11 @@ function Form3E({ currTime, updateFormData, nextStep, backStep }) {
     backStep();
   };
 
+  function handleTimeClick(timeIndex) {
+    setSelectedTime(timeIndex);
+  }
+
+  // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
       <div className="form-div-main bg-white h-100">
@@ -69,5 +77,5 @@ function Form3E({ currTime, updateFormData, nextStep, backStep }) {
     </div>
   );
 }
-
+// Export
 export default Form3E;

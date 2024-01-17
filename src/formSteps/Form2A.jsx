@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import BackNext from "../components/Form/BackNext";
 import "../styles/Form.css";
 
-// MAIN
+// FORM STEP
 //-------------------------------------------------------------------------------------------------------
 function Form2A({ currYear, updateFormData, nextStep, backStep }) {
   // Content Variables --------------------------------------------
@@ -72,7 +72,7 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
           />
           {errorState && (
             <p className="position-absolute errormsg">
-              Please select a school to proceed.
+              Please select a year to proceed.
             </p>
           )}
         </div>

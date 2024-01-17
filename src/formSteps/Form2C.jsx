@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// Select Majors and Minors
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form2C({
   currMajors,
   currMinors,
@@ -12,6 +13,7 @@ function Form2C({
   nextStep,
   backStep,
 }) {
+  // Content Variables --------------------------------------------
   const exampleOptions = [
     "Biology",
     "Computer Science",
@@ -24,33 +26,35 @@ function Form2C({
     "Political Science",
     "Psychology",
   ];
+
+  // UseState Variables -------------------------------------------------
   const [selectedMajors, setSelectedMajors] = useState(
     currMajors.map((major) => exampleOptions.indexOf(major))
   );
+
   const [selectedMinors, setSelectedMinors] = useState(
     currMinors.map((minor) => exampleOptions.indexOf(minor))
   );
+
   const [errorState, setErrorState] = useState(false);
 
+  // Function Declarations ---------------------------------------------
+  // Next
   const handleNextClick = () => {
     if (selectedMajors.length > 0 || selectedMinors.length > 0) {
       const updates = {};
-
       if (selectedMajors.length > 0) {
         const selectedMajorValues = selectedMajors.map(
           (index) => exampleOptions[index]
         );
         updates.majors = selectedMajorValues;
       }
-
       if (selectedMinors.length > 0) {
         const selectedMinorValues = selectedMinors.map(
           (index) => exampleOptions[index]
         );
         updates.minors = selectedMinorValues;
       }
-
-      // Single update call with all the changes
       updateFormData(updates);
       nextStep();
     } else {
@@ -58,30 +62,12 @@ function Form2C({
     }
   };
 
+  // Back
   const handleBackClick = () => {
     backStep();
   };
 
-  // const handleSelectMajor = (event) => {
-  //   if (!selectedMajors.includes(event.target.value)) {
-  //     setSelectedMajors([...selectedMajors, event.target.value]);
-  //   }
-  // };
-
-  // const handleRemoveMajor = (major) => {
-  //   setSelectedMajors(selectedMajors.filter((m) => m !== major));
-  // };
-
-  // const handleSelectMinor = (event) => {
-  //   if (!selectedMinors.includes(event.target.value)) {
-  //     setSelectedMinors([...selectedMinors, event.target.value]);
-  //   }
-  // };
-
-  // const handleRemoveMinor = (minor) => {
-  //   setSelectedMinors(selectedMinors.filter((m) => m !== minor));
-  // };
-
+  // Major Select
   const handleSelectMajor = (event) => {
     const index = exampleOptions.indexOf(event.target.value);
     if (index >= 0 && !selectedMajors.includes(index)) {
@@ -89,10 +75,12 @@ function Form2C({
     }
   };
 
+  // Major Remove
   const handleRemoveMajor = (index) => {
     setSelectedMajors(selectedMajors.filter((i) => i !== index));
   };
 
+  // Minor Select
   const handleSelectMinor = (event) => {
     const index = exampleOptions.indexOf(event.target.value);
     if (index >= 0 && !selectedMinors.includes(index)) {
@@ -100,10 +88,12 @@ function Form2C({
     }
   };
 
+  // Minor Remove
   const handleRemoveMinor = (index) => {
     setSelectedMinors(selectedMinors.filter((i) => i !== index));
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
       <div className="form-div-main bg-white h-100">
@@ -187,4 +177,5 @@ function Form2C({
   );
 }
 
+// Export
 export default Form2C;

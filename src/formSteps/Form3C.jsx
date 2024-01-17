@@ -1,22 +1,30 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// Location
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form3C({ currLoc, updateFormData, nextStep, backStep }) {
+  // Content Variables --------------------------------------------
   const locs = [
     "North Campus",
     "Central Campus",
     "South Campus",
     "No Preference",
   ];
+
+  // UseState Variables -------------------------------------------------
   const [selectedLoc, setSelectedLoc] = useState(locs.indexOf(currLoc));
+
+  const [errorState, setErrorState] = useState(false);
+
+  // Function Declarations ----------------------------------------------
   function handleLocClick(locIndex) {
     setSelectedLoc(locIndex);
   }
-  const [errorState, setErrorState] = useState(false);
 
   const handleNextClick = () => {
     if (selectedLoc != -1) {
@@ -31,6 +39,7 @@ function Form3C({ currLoc, updateFormData, nextStep, backStep }) {
     backStep();
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
       <div className="form-div-main bg-white h-100">
@@ -75,4 +84,5 @@ function Form3C({ currLoc, updateFormData, nextStep, backStep }) {
   );
 }
 
+// Export
 export default Form3C;

@@ -1,11 +1,14 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// Preferences Section Init
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form3A({ updateFormData, nextStep, backStep }) {
+  // Function Declarations ----------------------------------------------
   const handleNextClick = () => {
     nextStep();
   };
@@ -14,6 +17,7 @@ function Form3A({ updateFormData, nextStep, backStep }) {
     backStep();
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <>
       <div class="container-fluid position-fixed vh-100 mt-5 mb-0">
@@ -40,4 +44,5 @@ function Form3A({ updateFormData, nextStep, backStep }) {
   );
 }
 
+// Export
 export default Form3A;

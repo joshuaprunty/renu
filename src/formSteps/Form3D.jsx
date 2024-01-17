@@ -1,11 +1,14 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// Meeting Days
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form3D({ currDay, updateFormData, nextStep, backStep }) {
+  // Content Variables --------------------------------------------
   const days = [
     "Monday / Wednesday / Friday",
     "Tuesday / Thursday",
@@ -13,6 +16,7 @@ function Form3D({ currDay, updateFormData, nextStep, backStep }) {
   ];
   const [selectedDay, setSelectedDay] = useState(days.indexOf(currDay));
 
+  // Function Declarations ----------------------------------------------
   function handleDayClick(dayIndex) {
     setSelectedDay(dayIndex);
   }
@@ -31,6 +35,7 @@ function Form3D({ currDay, updateFormData, nextStep, backStep }) {
     backStep();
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
       <div className="form-div-main bg-white h-100">
@@ -75,4 +80,5 @@ function Form3D({ currDay, updateFormData, nextStep, backStep }) {
   );
 }
 
+// Export
 export default Form3D;

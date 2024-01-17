@@ -1,11 +1,14 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// Basic Info Section - Initial
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form1B({ nextStep, backStep }) {
+  // Function Declarations ----------------------------------------------
   const handleNextClick = () => {
     nextStep();
   };
@@ -14,6 +17,7 @@ function Form1B({ nextStep, backStep }) {
     backStep();
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <>
       <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
@@ -40,4 +44,5 @@ function Form1B({ nextStep, backStep }) {
   );
 }
 
+// Export
 export default Form1B;

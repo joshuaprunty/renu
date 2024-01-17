@@ -1,11 +1,14 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 
-// What Reqs to Fulfill
-
+// FORM STEP
+//-------------------------------------------------------------------------------------------------------
 function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
+  // Content Variables --------------------------------------------
   const fulfills = [
     "Foundational Discipline",
     "Major/Minor Requirement",
@@ -14,11 +17,15 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
     "Language Requirement",
     "Other",
   ];
+
+  // UseState Variables -------------------------------------------------
   const [selectedFulfills, setSelectedFulfills] = useState(
     currFulfill.map((value) => fulfills.indexOf(value))
   );
+
   const [errorState, setErrorState] = useState(false);
 
+  // Function Declarations ----------------------------------------------
   function handleFulfillsClick(fulfillsIndex) {
     if (selectedFulfills.includes(fulfillsIndex)) {
       // If already selected, remove it from the array
@@ -53,6 +60,7 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
     backStep();
   };
 
+  // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
       <div className="form-div-main bg-white h-100">
@@ -99,4 +107,5 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
   );
 }
 
+// Export
 export default Form2D;
