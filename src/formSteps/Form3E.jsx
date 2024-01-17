@@ -13,13 +13,14 @@ function Form3E({ currTime, updateFormData, nextStep, backStep }) {
   }
 
   const handleNextClick = () => {
-    if (selectedTime != null) {
+    if (selectedTime != -1) {
       updateFormData({ time: times[selectedTime - 1] });
       nextStep();
     } else {
-      console.log("Please select a time slot to proceed.");
+      setErrorState(true);
     }
   };
+  const [errorState, setErrorState] = useState(false);
 
   const handleBackClick = () => {
     backStep();
@@ -54,6 +55,11 @@ function Form3E({ currTime, updateFormData, nextStep, backStep }) {
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
           />
+          {errorState && (
+            <p className="position-absolute errormsg">
+              Please select a school to proceed.
+            </p>
+          )}
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

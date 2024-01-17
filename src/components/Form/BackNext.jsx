@@ -8,7 +8,7 @@ function BackNext({ handleBackClick, handleNextClick }) {
   return (
     <div className="row">
       <div className="col-2"></div>
-      <div className="col-12 col-md-4 d-flex justify-content-center my-1 order-2 order-md-1">
+      <div className="col-12 col-lg-4 d-flex justify-content-center my-1 order-2 order-lg-1">
         <button
           onClick={handleBackClick}
           className="btn btn-secondary btn-lg px-5 mx-auto"
@@ -17,7 +17,7 @@ function BackNext({ handleBackClick, handleNextClick }) {
           Back
         </button>
       </div>
-      <div className="col-12 col-md-4 d-flex justify-content-center my-1 order-1 order-md-2">
+      <div className="col-12 col-lg-4 d-flex justify-content-center my-1 order-1 order-lg-2">
         <button
           onClick={handleNextClick}
           className="btn btn-secondary btn-lg mx-auto px-5"

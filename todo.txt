@@ -11,12 +11,9 @@
 - Update version number (make some shit up)
 
 - Fix Form UI issues
-    - Checkboxes get distorted on page resize
-    - Center Back and Next buttons
     - Recolor some things (like button hover) since it looks dookie
-    - Majors Page: Redo dropdown if possible, fix the 'x' button (looks like it's from 2004)
+    - Majors Page: Redo dropdown if possible
     - Majors Page: More general UI overhaul. 
-    - Reqs Page: center text (make sure this isn't an issue on other pages - probably is)
 
 - Add a strawman loading page and results page
     - Again this is kinda for mental clarity and visualizing the roadmap

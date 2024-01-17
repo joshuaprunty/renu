@@ -30,6 +30,7 @@ function Form2C({
   const [selectedMinors, setSelectedMinors] = useState(
     currMinors.map((minor) => exampleOptions.indexOf(minor))
   );
+  const [errorState, setErrorState] = useState(false);
 
   const handleNextClick = () => {
     if (selectedMajors.length > 0 || selectedMinors.length > 0) {
@@ -53,7 +54,7 @@ function Form2C({
       updateFormData(updates);
       nextStep();
     } else {
-      console.log("Please select at least one major or minor to proceed.");
+      setErrorState(true);
     }
   };
 
@@ -132,7 +133,10 @@ function Form2C({
               {selectedMajors.map((major, index) => (
                 <div key={index} className="selected-item">
                   {exampleOptions[major]}{" "}
-                  <button onClick={() => handleRemoveMajor(major)}>X</button>
+                  <button
+                    className="btn btn-close btn-sm"
+                    onClick={() => handleRemoveMajor(major)}
+                  ></button>
                 </div>
               ))}
             </div>
@@ -155,7 +159,10 @@ function Form2C({
               {selectedMinors.map((minor, index) => (
                 <div key={index} className="selected-item">
                   {exampleOptions[minor]}{" "}
-                  <button onClick={() => handleRemoveMinor(minor)}>X</button>
+                  <button
+                    className="btn btn-close btn-sm"
+                    onClick={() => handleRemoveMinor(minor)}
+                  ></button>
                 </div>
               ))}
             </div>
@@ -165,6 +172,11 @@ function Form2C({
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
           />
+          {errorState && (
+            <p className="position-absolute errormsg">
+              Please select at least one major to proceed.
+            </p>
+          )}
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

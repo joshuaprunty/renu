@@ -1,6 +1,10 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+// MAIN
+//-------------------------------------------------------------------------------------------------------
 function Navbar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -102,4 +106,5 @@ function Navbar() {
   );
 }
 
+// Export
 export default Navbar;

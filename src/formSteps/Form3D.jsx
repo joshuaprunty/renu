@@ -16,13 +16,14 @@ function Form3D({ currDay, updateFormData, nextStep, backStep }) {
   function handleDayClick(dayIndex) {
     setSelectedDay(dayIndex);
   }
+  const [errorState, setErrorState] = useState(false);
 
   const handleNextClick = () => {
-    if (selectedDay != null) {
+    if (selectedDay != -1) {
       updateFormData({ day: days[selectedDay - 1] });
       nextStep();
     } else {
-      console.log("Please select a day to proceed.");
+      setErrorState(true);
     }
   };
 
@@ -59,6 +60,11 @@ function Form3D({ currDay, updateFormData, nextStep, backStep }) {
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
           />
+          {errorState && (
+            <p className="position-absolute errormsg">
+              Please select an option to proceed.
+            </p>
+          )}
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

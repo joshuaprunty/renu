@@ -16,13 +16,14 @@ function Form3C({ currLoc, updateFormData, nextStep, backStep }) {
   function handleLocClick(locIndex) {
     setSelectedLoc(locIndex);
   }
+  const [errorState, setErrorState] = useState(false);
 
   const handleNextClick = () => {
-    if (selectedLoc != null) {
+    if (selectedLoc != -1) {
       updateFormData({ loc: locs[selectedLoc - 1] });
       nextStep();
     } else {
-      console.log("Please select a location to proceed.");
+      setErrorState(true);
     }
   };
 
@@ -59,6 +60,11 @@ function Form3C({ currLoc, updateFormData, nextStep, backStep }) {
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
           />
+          {errorState && (
+            <p className="position-absolute errormsg">
+              Please select a location to proceed.
+            </p>
+          )}
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

@@ -20,6 +20,8 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
   // UseState Variables -------------------------------------------------
   const [selectedYear, setSelectedYear] = useState(years.indexOf(currYear) + 1);
 
+  const [errorState, setErrorState] = useState(false);
+
   // Function Declarations ----------------------------------------------
   const handleYearClick = (yearIndex) => {
     setSelectedYear(yearIndex);
@@ -27,11 +29,11 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
 
   // Next
   const handleNextClick = () => {
-    if (selectedYear != null) {
+    if (selectedYear != 0) {
       updateFormData({ year: years[selectedYear - 1] });
       nextStep();
     } else {
-      console.log("Please select a year to proceed.");
+      setErrorState(true);
     }
   };
 
@@ -43,11 +45,7 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
   // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
-      {" "}
-      {/*Container*/}
       <div className="form-div-main bg-white h-100">
-        {" "}
-        {/*Form Div*/}
         <img
           className="form-background-img"
           src="src/assets/NorthwesternN.png"
@@ -72,6 +70,11 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
           />
+          {errorState && (
+            <p className="position-absolute errormsg">
+              Please select a school to proceed.
+            </p>
+          )}
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

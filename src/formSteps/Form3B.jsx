@@ -11,13 +11,14 @@ function Form3B({ currDiff, updateFormData, nextStep, backStep }) {
   function handleDiffClick(diffIndex) {
     setSelectedDiff(diffIndex);
   }
+  const [errorState, setErrorState] = useState(false);
 
   const handleNextClick = () => {
-    if (selectedDiff != null) {
+    if (selectedDiff != -1) {
       updateFormData({ diff: diffs[selectedDiff - 1] });
       nextStep();
     } else {
-      console.log("Please select a difficulty to proceed.");
+      setErrorState(true);
     }
   };
 
@@ -54,6 +55,11 @@ function Form3B({ currDiff, updateFormData, nextStep, backStep }) {
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
           />
+          {errorState && (
+            <p className="position-absolute errormsg">
+              Please select an option to proceed.
+            </p>
+          )}
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

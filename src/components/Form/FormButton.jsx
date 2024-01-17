@@ -1,7 +1,11 @@
+// IMPORTS
+//-------------------------------------------------------------------------------------------------------
 import React from "react";
 import "/src//styles/Home.css";
 import "/src/styles/Form.css";
 
+// MAIN
+//-------------------------------------------------------------------------------------------------------
 const FormButton = ({ key, school }) => {
   return (
     <button
@@ -18,4 +22,5 @@ const FormButton = ({ key, school }) => {
   );
 };
 
+// Export
 export default FormButton;

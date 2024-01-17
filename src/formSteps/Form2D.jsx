@@ -17,6 +17,7 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
   const [selectedFulfills, setSelectedFulfills] = useState(
     currFulfill.map((value) => fulfills.indexOf(value))
   );
+  const [errorState, setErrorState] = useState(false);
 
   function handleFulfillsClick(fulfillsIndex) {
     if (selectedFulfills.includes(fulfillsIndex)) {
@@ -44,7 +45,7 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
       nextStep();
     } else {
       // Handle the case where no options are selected
-      console.log("Please select at least one area to proceed.");
+      setErrorState(true);
     }
   };
 
@@ -83,6 +84,11 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
           />
+          {errorState && (
+            <p className="position-absolute errormsg">
+              Please select at least one requirement area to proceed.
+            </p>
+          )}
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">

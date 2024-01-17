@@ -18,16 +18,20 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
     schools.indexOf(currSchool) + 1
   );
 
+  const [errorState, setErrorState] = useState(false);
+
   function handleSchoolClick(schoolIndex) {
     setSelectedSchool(schoolIndex);
+    setErrorState(false);
   }
 
   const handleNextClick = () => {
-    if (selectedSchool != null) {
+    if (selectedSchool != 0) {
       updateFormData({ school: schools[selectedSchool - 1] });
+      console.log(selectedSchool);
       nextStep();
     } else {
-      console.log("Please select a school to proceed.");
+      setErrorState(true);
     }
   };
 
@@ -64,6 +68,11 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
           />
+          {errorState && (
+            <p className="position-absolute errormsg">
+              Please select a school to proceed.
+            </p>
+          )}
         </div>
       </div>
       <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
