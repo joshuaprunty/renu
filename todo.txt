@@ -1,14 +1,12 @@
-- Add about page content
+TODO
 
-- Remove Login tab (User functionality is way down the line)
+- Add about page content
 
 - Better version control overall
 
 - Add remaining form page frontends
     - Can 'comment these out' when starting backend functionality
     - But should have wireframes at the very least, for mental organization
-
-- Update version number (make some shit up)
 
 - Fix Form UI issues
     - Recolor some things (like button hover) since it looks dookie

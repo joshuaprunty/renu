@@ -1,58 +1,43 @@
 // IMPORTS
 //-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
-import "../styles/Home.css";
-import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
+import "../styles/Form.css";
 
 // FORM STEP
 //-------------------------------------------------------------------------------------------------------
-function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
+function Form2A({ currYear, updateFormData, nextStep, backStep }) {
   // Content Variables --------------------------------------------
-  const fulfills = [
-    "Foundational Discipline",
-    "Major/Minor Requirement",
-    "Seminar"
+  const years = [
+    "First Year",
+    "Second Year",
+    "Third Year",
+    "Fourth Year",
+    "Fifth Year",
+    "Sixth Year",
   ];
 
   // UseState Variables -------------------------------------------------
-  const [selectedFulfills, setSelectedFulfills] = useState(
-    currFulfill.map((value) => fulfills.indexOf(value))
-  );
+  const [selectedYear, setSelectedYear] = useState(years.indexOf(currYear) + 1);
 
   const [errorState, setErrorState] = useState(false);
 
   // Function Declarations ----------------------------------------------
-  function handleFulfillsClick(fulfillsIndex) {
-    if (selectedFulfills.includes(fulfillsIndex)) {
-      // If already selected, remove it from the array
-      setSelectedFulfills(
-        selectedFulfills.filter((index) => index !== fulfillsIndex)
-      );
-    } else {
-      // If not selected, add it to the array
-      setSelectedFulfills([...selectedFulfills, fulfillsIndex]);
-    }
-  }
+  const handleYearClick = (yearIndex) => {
+    setSelectedYear(yearIndex);
+  };
 
+  // Next
   const handleNextClick = () => {
-    if (selectedFulfills.length > 0) {
-      // Transform the indices into actual time values
-      const selectedFulfillValues = selectedFulfills.map(
-        (index) => fulfills[index - 1]
-      );
-
-      // Update the form data with the array of selected times
-      updateFormData({ fulfills: selectedFulfillValues });
-
-      // Proceed to the next step
+    if (selectedYear != 0) {
+      updateFormData({ year: years[selectedYear - 1] });
       nextStep();
     } else {
-      // Handle the case where no options are selected
       setErrorState(true);
     }
   };
 
+  // Back
   const handleBackClick = () => {
     backStep();
   };
@@ -66,23 +51,19 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
           src="src/assets/NorthwesternN.png"
         />
         <div className="formq-content d-grid gap-2 position-relative z-2">
-          <h2>What requirement(s) are you looking to fulfill?</h2>
-          {fulfills.map((fulfill, index) => (
+          <h2>Your class at NU (Current or Incoming):</h2>
+          {years.map((year, index) => (
             <button
               key={index}
               className="btn btn-outline-secondary d-flex align-items-center py-3"
-              onClick={() => handleFulfillsClick(index + 1)}
+              onClick={() => handleYearClick(index + 1)}
             >
               <div
                 className={`check-square ms-4 ${
-                  selectedFulfills.includes(index + 1)
-                    ? "check-square-selected"
-                    : ""
+                  selectedYear === index + 1 ? "check-square-selected" : ""
                 }`}
               ></div>
-              <span className="form-option-text text-start ms-lg-5 ms-3 fs-5">
-                {fulfill}
-              </span>
+              <span className="form-option-text ms-lg-5 ms-3 fs-5">{year}</span>
             </button>
           ))}
           <BackNext
@@ -91,7 +72,7 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
           />
           {errorState && (
             <p className="position-absolute errormsg">
-              Please select at least one requirement area to proceed.
+              Please select a year to proceed.
             </p>
           )}
         </div>
@@ -105,4 +86,4 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
 }
 
 // Export
-export default Form2D;
+export default Form2A;

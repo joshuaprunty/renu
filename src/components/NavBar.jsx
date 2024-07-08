@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
+      <div className="debug container-lg">
         <a
           className="navbar-brand"
           href="/"
@@ -64,7 +64,7 @@ function Navbar() {
                 About
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 className="nav-link"
                 activeClassName="active"
@@ -72,7 +72,7 @@ function Navbar() {
               >
                 Login
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <a
                 class="nav-link ps-lg-2 pe-lg-3"
@@ -99,7 +99,7 @@ function Navbar() {
               </a>
             </li>
           </ul>
-          <span class="navbar-text">v. 0.0.1</span>
+          <span class="navbar-text">v. 0.1.0</span>
         </div>
       </div>
     </nav>

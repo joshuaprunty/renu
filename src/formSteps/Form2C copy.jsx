@@ -9,6 +9,7 @@ import BackNext from "../components/Form/BackNext";
 //-------------------------------------------------------------------------------------------------------
 function Form2C({
   currMajors,
+  currMinors,
   updateFormData,
   nextStep,
   backStep,
@@ -32,16 +33,29 @@ function Form2C({
     currMajors.map((major) => exampleOptions.indexOf(major))
   );
 
+  const [selectedMinors, setSelectedMinors] = useState(
+    currMinors.map((minor) => exampleOptions.indexOf(minor))
+  );
+
   const [errorState, setErrorState] = useState(false);
 
   // Function Declarations ---------------------------------------------
   // Next
   const handleNextClick = () => {
-    if (selectedMajors.length > 0) {
+    if (selectedMajors.length > 0 || selectedMinors.length > 0) {
       const updates = {};
-      const selectedMajorValues = selectedMajors.map(
-        (index) => exampleOptions[index]
-      );
+      if (selectedMajors.length > 0) {
+        const selectedMajorValues = selectedMajors.map(
+          (index) => exampleOptions[index]
+        );
+        updates.majors = selectedMajorValues;
+      }
+      if (selectedMinors.length > 0) {
+        const selectedMinorValues = selectedMinors.map(
+          (index) => exampleOptions[index]
+        );
+        updates.minors = selectedMinorValues;
+      }
       updateFormData(updates);
       nextStep();
     } else {
@@ -67,6 +81,19 @@ function Form2C({
     setSelectedMajors(selectedMajors.filter((i) => i !== index));
   };
 
+  // Minor Select
+  const handleSelectMinor = (event) => {
+    const index = exampleOptions.indexOf(event.target.value);
+    if (index >= 0 && !selectedMinors.includes(index)) {
+      setSelectedMinors([...selectedMinors, index]);
+    }
+  };
+
+  // Minor Remove
+  const handleRemoveMinor = (index) => {
+    setSelectedMinors(selectedMinors.filter((i) => i !== index));
+  };
+
   // Return Statement ---------------------------------------------------
   return (
     <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
@@ -77,7 +104,7 @@ function Form2C({
         />
         <div className="formq-content d-grid gap-2 position-relative z-2">
           <h2>
-            Add your current/intended majors.
+            Add your current/intended majors, minors, and certificate programs
           </h2>
 
           <div className="form-group">
@@ -100,6 +127,32 @@ function Form2C({
                   <button
                     className="btn btn-close btn-sm"
                     onClick={() => handleRemoveMajor(major)}
+                  ></button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="minors-dropdown">Minors</label>
+            <select
+              id="minors-dropdown"
+              className="form-control"
+              onChange={handleSelectMinor}
+            >
+              {exampleOptions.map((option, index) => (
+                <option key={index} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            <div className="selected-items">
+              {selectedMinors.map((minor, index) => (
+                <div key={index} className="selected-item">
+                  {exampleOptions[minor]}{" "}
+                  <button
+                    className="btn btn-close btn-sm"
+                    onClick={() => handleRemoveMinor(minor)}
                   ></button>
                 </div>
               ))}

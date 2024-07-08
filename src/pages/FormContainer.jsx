@@ -27,11 +27,7 @@ function MultiStepForm() {
 
   // Function to move to the next step
   const nextStep = () => setCurrentStep(currentStep + 1);
-
   const backStep = () => setCurrentStep(currentStep - 1);
-
-  // Function to move to the previous step
-  const prevStep = () => setCurrentStep(currentStep - 1);
 
   // Function to update form data
   const updateFormData = (newData) => {
@@ -83,56 +79,11 @@ function MultiStepForm() {
           />
         );
       case 7:
-        return (
-          <Form3A
-            updateFormData={updateFormData}
-            nextStep={nextStep}
-            backStep={backStep}
-          />
-        );
-      case 8:
-        return (
-          <Form3B
-            currDiff={formData.diff}
-            updateFormData={updateFormData}
-            nextStep={nextStep}
-            backStep={backStep}
-          />
-        );
-      case 9:
-        return (
-          <Form3C
-            currLoc={formData.loc}
-            updateFormData={updateFormData}
-            nextStep={nextStep}
-            backStep={backStep}
-          />
-        );
-      case 10:
-        return (
-          <Form3D
-            currDay={formData.day}
-            updateFormData={updateFormData}
-            nextStep={nextStep}
-            backStep={backStep}
-          />
-        );
-      case 11:
-        return (
-          <Form3E
-            currTime={formData.time}
-            updateFormData={updateFormData}
-            nextStep={nextStep}
-            backStep={backStep}
-          />
-        );
-      case 12:
         console.log(formData);
         return <div>Form Completed</div>;
 
       default:
         return <div>Form Completed</div>;
-        console.log(formData);
     }
   };
 

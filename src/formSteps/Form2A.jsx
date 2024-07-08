@@ -13,8 +13,6 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
     "Second Year",
     "Third Year",
     "Fourth Year",
-    "Fifth Year",
-    "Sixth Year",
   ];
 
   // UseState Variables -------------------------------------------------
