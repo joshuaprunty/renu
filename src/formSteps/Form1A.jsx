@@ -3,7 +3,6 @@
 import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
-import "../styles/debug.css";
 
 // FORM STEP
 //-------------------------------------------------------------------------------------------------------

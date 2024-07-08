@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 //-------------------------------------------------------------------------------------------------------
 function Navbar() {
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
       <div className="container-lg">
         <a
           className="navbar-brand"
@@ -102,6 +102,7 @@ function Navbar() {
           <span class="navbar-text">v. 0.1.0</span>
         </div>
       </div>
+      <div className="nav-bottom-border"></div>
     </nav>
   );
 }

@@ -24,24 +24,27 @@ function Secondary() {
   ];
 
   return (
-    <div class="bg-white secondary-div" id="secondary-div">
-      <div class="container-lg">
-        <p class="second-header text-center">How Renu Works</p>
-        <hr class="secondary-hr text-black" />
-        <div class="row justify-content-center text-center px-2">
-          {cardData.map((data, index) => (
-            <div key={index} className="col-9 col-md-4 my-2">
-              <div className="card h-100 py-3">
-                <div className="card-body">
-                  <h5 className="fs-3 mb-4">{data.title}</h5>
-                  <p className="fs-4 fw-light mb-md-5">{data.text}</p>
+    <>
+      <div class="bg-white secondary-div" id="secondary-div">
+        <div class="container-lg">
+          <p class="second-header text-center">How Renu Works</p>
+          <hr class="secondary-hr text-black" />
+          <div class="row justify-content-center text-center px-2">
+            {cardData.map((data, index) => (
+              <div key={index} className="col-9 col-md-4 my-2">
+                <div className="card h-100 py-3">
+                  <div className="card-body">
+                    <h5 className="fs-3 mb-4">{data.title}</h5>
+                    <p className="fs-4 fw-light mb-md-5">{data.text}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <div className="line"></div>
+    </>
   );
 }
 

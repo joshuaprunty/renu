@@ -8,10 +8,10 @@ import "../styles/debug.css";
 //-------------------------------------------------------------------------------------------------------
 function Footer() {
   return (
-    <div class="footer-div bg-dark">
+    <div class="footer-div bg-body-tertiary">
       <div class="container-lg">
         <div class="row justify-content-center">
-          <div class="col-md-3 text-white justify-content-center">
+          <div class="col-md-3 justify-content-center">
             <div class="ms-auto">
               <ul class="footer-list">
                 <li class="footer-list-item fl-top">Renu</li>
@@ -23,7 +23,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="col-md-3 text-white justify-content-center">
+          <div class="col-md-3 justify-content-center">
             <div class="ms-auto">
               <ul class="footer-list">
                 <li class="footer-list-item fl-top">Links</li>
@@ -45,7 +45,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="col-md-3 text-white justify-content-center">
+          <div class="col-md-3 justify-content-center">
             <div class="ms-auto">
               <ul class="footer-list">
                 <li class="footer-list-item fl-top">Pages</li>
@@ -67,7 +67,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div class="col-md-3 text-white justify-content-center">
+          <div class="col-md-3 justify-content-center">
             <div class="ms-auto">
               <ul class="footer-list">
                 <li class="footer-list-item fw-light">© Joshua Prunty, 2023</li>

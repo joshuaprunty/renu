@@ -9,11 +9,9 @@ import "/src/styles/debug.css";
 function Ternary() {
   return (
     <div class="ternary-div" id="ternary-div">
-      <div class="container-lg py-5">
-        <p class="second-header text-center text-white">
-          Built for every student
-        </p>
-        <hr class="secondary-hr text-white" />
+      <div class="container-lg py-5 px-6">
+        <p class="second-header text-center">Built for every student</p>
+        <hr class="secondary-hr" />
         <div class="row mt-4 px-4 text-center">
           <div class="col-lg-9 g-0 g-md-3">
             <div class="ternary-card w-100">
