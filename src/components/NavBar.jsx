@@ -76,7 +76,7 @@ function Navbar() {
             <li>
               <a
                 class="nav-link ps-lg-2 pe-lg-3"
-                href="https://github.com/joshuaprunty/courserecommender"
+                href="https://github.com/joshuaprunty/renu"
                 target="_blank"
                 rel="noopener"
               >

@@ -15,7 +15,7 @@ function Quaternary() {
           <div class="row h-100 align-content-center">
             <div class="col-sm-2"></div>
             <div class="col-sm-8 justify-content-center text-center ms-auto">
-              <h2 class="text-white text-center mb-4">
+              <h2 class="text-white text-center myfw2 mb-4">
                 Find your next class now
               </h2>
               <a href="./form" class="btn btn-light btn-lg">

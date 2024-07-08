@@ -78,13 +78,13 @@
   height: 20px;
   width: auto;
   border-radius: 15%;
-  border: 2px solid #999999;
+  border: 1px solid #999999;
   display: inline-block;
 }
 
 .check-square-selected {
   /* Your styles for a filled-in check-square */
-  background-color: #4f2b85;
+  background-color: #443161;
 }
 
 .form-background-img {
@@ -162,4 +162,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.thinoutline {
+  border: 1px solid #cfcfcf !important;
 }

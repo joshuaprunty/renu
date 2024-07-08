@@ -17,12 +17,12 @@ function Hero() {
               <h1 className="hero-header mb-4">
                 Find your next class without the guesswork.
               </h1>
-              <p className="fw-light fs-3 mb-4">
+              <p className="myfw fs-3 mb-4">
                 Get tailored recommendations for major requirements, distros,
                 and more.
               </p>
               <a href="./form" className="btn btn-outline-light btn-lg">
-                Get Started
+                <p className="myfw fixie">Get Started</p>
               </a>
             </div>
             <div className="col-12 col-md-5 fw-light text-center">

@@ -45,7 +45,7 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
           {years.map((year, index) => (
             <button
               key={index}
-              className="btn btn-outline-secondary d-flex align-items-center py-3"
+              className="btn btn-outline-secondary thinoutline d-flex align-items-center py-3"
               onClick={() => handleYearClick(index + 1)}
             >
               <div

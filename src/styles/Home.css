@@ -210,3 +210,17 @@ body {
   background-color: #dedede;
   width: 100vw;
 }
+
+.myfw {
+  font-weight: 100;
+}
+
+.fixie {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.myfw2 {
+  font-weight: 300;
+  opacity: 80%;
+}
