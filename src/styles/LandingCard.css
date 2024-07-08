@@ -1,6 +1,6 @@
 .land-card {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .land-card:hover {
@@ -13,4 +13,12 @@
     /* Define the smaller font size for smaller screens */
     font-size: 1em;
   }
+}
+
+.cardtitle {
+  height: 3.5em;
+}
+
+.cardbody {
+  height: 50%
 }

@@ -32,10 +32,12 @@ function Secondary() {
           <div class="row justify-content-center text-center px-2">
             {cardData.map((data, index) => (
               <div key={index} className="col-11 col-md-4 my-3 my-md-2">
-                <div className="card h-100 py-3">
+                <div className="card h-100 py-3 px-lg-3">
                   <div className="card-body">
-                    <h5 className="fs-3 mb-4">{data.title}</h5>
-                    <p className="fs-4 fw-light mb-md-5">{data.text}</p>
+                    <h5 className="fs-4 cardtitle mb-4">{data.title}</h5>
+                    <p className="fs-4 cardbody fw-light mb-md-5">
+                      {data.text}
+                    </p>
                   </div>
                 </div>
               </div>
