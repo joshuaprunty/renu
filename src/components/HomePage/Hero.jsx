@@ -13,7 +13,7 @@ function Hero() {
       <div className="hero-div" id="hero-div">
         <div className="hero-div container-lg" id="hero-div">
           <div className="row align-items-center">
-            <div className="col-12 col-md-7 text-white text-center m-auto">
+            <div className="col-12 col-md-6 text-white text-center m-auto">
               <h1 className="hero-header mb-4">
                 Find your next class without the guesswork.
               </h1>

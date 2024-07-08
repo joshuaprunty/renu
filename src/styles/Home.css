@@ -8,6 +8,10 @@ body {
   background-color: #2a292c;
 }
 
+/* * {
+  border: 1px solid red
+} */
+
 /* NAVBAR -----------------------------------------------------------*/
 .navbar {
   opacity: 95%;
@@ -59,25 +63,25 @@ body {
   justify-content: center;
   align-items: center;
   max-height: 850px;
-  padding-top: 4rem;
+  padding-top: 5rem;
   padding-bottom: 4rem;
+}
+
+.hero-img {
+  width: 75%;
+  height: auto;
 }
 
 @media (max-width: 767px) {
   .hero-img {
-    width: 100%;
+    width: 90%;
     margin-top: 45px;
   }
 }
 
-.hero-img {
-  width: 90%;
-  height: auto;
-}
-
 .hero-header {
-  font-size: 3.5em;
-  font-weight: 400;
+  font-size: 3em;
+  font-weight: 300;
 }
 
 /* SECTION - SECONDARY ----------------------------------------------*/
@@ -184,7 +188,7 @@ body {
 
 .footer-list {
   list-style: none;
-  margin-left: 30px;
+  padding: 0px;
 }
 
 .fl-top {

@@ -31,7 +31,7 @@ function Secondary() {
           <hr class="secondary-hr text-black" />
           <div class="row justify-content-center text-center px-2">
             {cardData.map((data, index) => (
-              <div key={index} className="col-9 col-md-4 my-2">
+              <div key={index} className="col-11 col-md-4 my-3 my-md-2">
                 <div className="card h-100 py-3">
                   <div className="card-body">
                     <h5 className="fs-3 mb-4">{data.title}</h5>

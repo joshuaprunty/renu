@@ -3,14 +3,15 @@
 import React from "react";
 import "../styles/Home.css";
 import "../styles/debug.css";
+import "../styles/util.css";
 
 // MAIN
 //-------------------------------------------------------------------------------------------------------
 function Footer() {
   return (
-    <div class="footer-div bg-body-tertiary">
+    <div class="footer-div bg-body-tertiary hide-sm">
       <div class="container-lg">
-        <div class="row justify-content-center">
+        <div class="row justify-content-start justify-content-md-center">
           <div class="col-md-3 justify-content-center">
             <div class="ms-auto">
               <ul class="footer-list">
