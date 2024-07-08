@@ -19,7 +19,7 @@ function FormLoad() {
           color="purple"
           className="debug"
         ></l-ripples>
-        <i className="mt-2">Loading your results...</i>
+        <i className="mt-4">Loading your results...</i>
       </div>
     </div>
   );

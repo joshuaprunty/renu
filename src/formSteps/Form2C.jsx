@@ -79,8 +79,8 @@ function Form2C({
 
   // Return Statement ---------------------------------------------------
   return (
-    <div className="form-div-major">
-      <div className="form-content d-grid gap-2 z-2">
+    <div className="form-div-major w-100 w-md-50">
+      <div className="form-content d-grid gap-2 position-relative z-2">
         <h2>Add your current/intended majors.</h2>
         <h5>Majors for {fullSchools[currSchool]} </h5>
         <Select

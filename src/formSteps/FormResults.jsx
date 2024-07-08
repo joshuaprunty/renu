@@ -12,8 +12,9 @@ function FormResults({ scores }) {
   return (
     <div className="form-div-res">
       <div className="load-content">
-        <h1 className="mt-2">Results</h1>
-        {scores.map((score, index) => (
+        <h1 className="my-3">Results</h1>
+        <hr className="secondary-hr" />
+        {scores.slice(0, 10).map((score, index) => (
           <div key={index} className="result-card my-2">
             <div className="title-score-container">
               <h3>{score.title}</h3>

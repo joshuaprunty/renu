@@ -4,6 +4,7 @@ import React from "react";
 import "../styles/Home.css";
 import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
+import BackNextCentered from "../components/Form/BackNextCentered";
 
 // FORM STEP
 //-------------------------------------------------------------------------------------------------------
@@ -22,11 +23,11 @@ function Form1B({ nextStep, backStep }) {
     <div class="form-div-main">
       <div className="form-content d-grid gap-2 position-relative z-2">
         <h1 className="text-center">Basic Info</h1>
-        <p className="text-center px-5">
+        <p className="text-center">
           This section will ask you basic info about your academic status at
           Northwestern to help determine courses that fit you.
         </p>
-        <BackNext
+        <BackNextCentered
           handleBackClick={handleBackClick}
           handleNextClick={handleNextClick}
         />
