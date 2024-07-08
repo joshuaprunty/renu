@@ -45,15 +45,14 @@ body {
 .hero-div {
   background-image: url(../assets/Deering.jpg);
   background-size: cover;
-  width: 100%;
   background-position: center;
   position: relative;
   display: flex;
-  padding: 15%;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
   max-height: 850px;
+  padding-top: 4rem;
+  padding-bottom:4rem;
 }
 
 @media (max-width: 767px) {
@@ -64,12 +63,25 @@ body {
 }
 
 .hero-img {
-  width: 400px;
+  width: 90%;
+  height: auto;
 }
 
+.hero-header {
+  font-size: 3.5em;
+  font-weight: 400;
+}
 /* SECTION - SECONDARY ----------------------------------------------*/
 .secondary-div {
-  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.second-header {
+  font-size: 3em;
 }
 
 .secondary-hr {
@@ -83,31 +95,34 @@ body {
 }
 
 .ternary-card {
-  width: 95%;
   background-color: lightgray;
-  height: 160px;
+  height: 20rem;
   margin: 30px auto;
-  padding: 0;
-  border-radius: 7px;
+  padding: 10px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
   display: flex;
 }
 
 .tc-head {
-  font-size: 1.25em;
+  font-size: 2.5em;
   font-weight: 400;
 }
 
 .tc-body {
-  font-weight: 100;
+  font-weight: 200;
+  font-size: 1.4em;
 }
 
 .tc-img {
   margin: 0 0;
   height: 100%;
+  width: 25%;
+  object-fit: cover;
   float: left;
   flex-shrink: 0;
+  border-radius: 15px;
 }
 
 .tc-text {
@@ -152,8 +167,6 @@ body {
 
 /* SECTION - FOOTER -------------------------------------------------*/
 .footer-div {
-  /* background-color: #2a292c; */
-  padding-top: 30px;
   font-size: 0.9em;
 }
 
@@ -176,63 +189,4 @@ body {
   font-weight: bold;
   color: #544171;
   transition-duration: 0.2s;
-}
-
-/*SECTION - FORM -------------------------------------------------*/
-.form-div-main {
-  width: 85%;
-  margin: auto 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 50px;
-}
-
-.form-progress-bar {
-  width: 15%;
-  background-color: #000000;
-  margin: auto 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#start-assessment-button {
-  background-color: #443161 !important;
-}
-
-#start-assessment-button:hover {
-  background-color: #352060 !important;
-  transition-duration: 0.15s !important;
-}
-
-.form-content {
-  width: 86%;
-}
-
-.formq-content {
-  width: 50%;
-}
-
-@media screen and (max-width: 767px) {
-  .form-progress-bar {
-    display: none;
-    width: 0;
-  }
-
-  .form-div-main {
-    width: 100%;
-  }
-}
-
-.check-square {
-  height: 20px;
-  width: 20px;
-  border-radius: 15%;
-  border: 2px solid #999999;
-  display: inline-block;
 }

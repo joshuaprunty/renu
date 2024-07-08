@@ -1,14 +1,34 @@
 .form-div-main {
-  width: 85%;
-  margin: auto 0;
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 0px;
+  width: 50%;
+}
+
+.form-div-major {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 50%;
+  height: 35%;
+}
+
+.form-div-res {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 50%;
+  height: 60%;
+}
+
+.formcont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-progress-bar {
@@ -33,9 +53,14 @@
   width: 86%;
 }
 
-.formq-content {
-  width: 50%;
+.load-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 
 @media screen and (max-width: 767px) {
   .form-progress-bar {
@@ -75,4 +100,66 @@
 .errormsg {
   color: red;
   transform: translateY(-55px);
+}
+
+.selected-item {
+  display: flex;
+  /* Ensures flexbox layout */
+  justify-content: space-between;
+  /* Aligns children to each end */
+  align-items: center;
+  border: 1px solid #dddddd;
+  /* Thin grey outline */
+  border-radius: 5px;
+  /* Rounded borders */
+  width: 100%;
+  /* Full width to match the parent, assuming the select element fills its parent */
+  box-sizing: border-box;
+  /* Ensures border and padding are included in the width */
+  margin-bottom: 8px;
+  /* Optional: adds space between items */
+  margin-top: 8px;
+  padding: 10px;
+  /* Optional: adds some padding inside the items */
+}
+
+.result-card {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  width: 70%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: baseline;
+  padding: 15px;
+  padding-top: 20px
+}
+
+.result-card {
+  transition: height 0.4s ease-in-out;
+}
+
+.result-card:hover {
+  height: 150px;
+}
+
+.more-info {
+  opacity: 0%;
+}
+
+
+.result-card:hover .more-info {
+  /* Example: Change color and increase font size */
+  opacity: 100%;
+  /* New text color on hover */
+  /* Increased font size */
+  transition: opacity 0.6s ease-in-out
+}
+
+.title-score-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }

@@ -1,8 +1,8 @@
 // IMPORTS
 //-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
-import "../styles/Home.css";
 import "../styles/Form.css";
+import "../styles/Home.css";
 import BackNext from "../components/Form/BackNext";
 
 // FORM STEP
@@ -29,6 +29,7 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
   function handleSchoolClick(schoolIndex) {
     setSelectedSchool(schoolIndex);
     setErrorState(false);
+    updateFormData({ school: schools[schoolIndex - 1] });
   }
 
   const handleNextClick = () => {
@@ -47,13 +48,9 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
 
   // Return Statement ---------------------------------------------------
   return (
-    <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
-      <div className="form-div-main bg-white h-100">
-        <img
-          className="form-background-img"
-          src="src/assets/NorthwesternN.png"
-        />
-        <div className="formq-content d-grid gap-2 position-relative z-2">
+    <>
+      <div class="form-div-main">
+        <div className="form-content d-grid gap-2 position-relative z-2">
           <h2>Your School/College:</h2>
           {schools.map((school, index) => (
             <button
@@ -82,11 +79,7 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
           )}
         </div>
       </div>
-      <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
-        <div className="p-b-left h-100"></div>
-        <div className="p-b-right h-100"></div>
-      </div>
-    </div>
+    </>
   );
 }
 

@@ -3,19 +3,13 @@
 import React, { useState } from "react";
 import BackNext from "../components/Form/BackNext";
 import "../styles/Form.css";
+import "../styles/Home.css";
 
 // FORM STEP
 //-------------------------------------------------------------------------------------------------------
 function Form2A({ currYear, updateFormData, nextStep, backStep }) {
   // Content Variables --------------------------------------------
-  const years = [
-    "First Year",
-    "Second Year",
-    "Third Year",
-    "Fourth Year",
-    "Fifth Year",
-    "Sixth Year",
-  ];
+  const years = ["Freshman", "Sophomore", "Junior", "Senior"];
 
   // UseState Variables -------------------------------------------------
   const [selectedYear, setSelectedYear] = useState(years.indexOf(currYear) + 1);
@@ -44,13 +38,9 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
 
   // Return Statement ---------------------------------------------------
   return (
-    <div className="container-fluid position-fixed vh-100 mt-5 mb-0">
-      <div className="form-div-main bg-white h-100">
-        <img
-          className="form-background-img"
-          src="src/assets/NorthwesternN.png"
-        />
-        <div className="formq-content d-grid gap-2 position-relative z-2">
+    <>
+      <div class="form-div-main">
+        <div className="form-content d-grid gap-2 position-relative z-2">
           <h2>Your class at NU (Current or Incoming):</h2>
           {years.map((year, index) => (
             <button
@@ -77,11 +67,7 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
           )}
         </div>
       </div>
-      <div className="form-progress-bar h-100 pt-2 px-4 text-center text-white mb-0">
-        <div className="p-b-left h-100"></div>
-        <div className="p-b-right h-100"></div>
-      </div>
-    </div>
+    </>
   );
 }
 
