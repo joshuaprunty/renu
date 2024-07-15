@@ -84,8 +84,7 @@
 }
 
 .check-square-selected {
-  /* Your styles for a filled-in check-square */
-  background-color: #443161;
+  border: 4px solid #443161;
 }
 
 .form-background-img {
@@ -105,23 +104,17 @@
 
 .selected-item {
   display: flex;
-  /* Ensures flexbox layout */
   justify-content: space-between;
-  /* Aligns children to each end */
   align-items: center;
   border: 1px solid #dddddd;
-  /* Thin grey outline */
   border-radius: 5px;
-  /* Rounded borders */
   width: 100%;
-  /* Full width to match the parent, assuming the select element fills its parent */
   box-sizing: border-box;
-  /* Ensures border and padding are included in the width */
   margin-bottom: 8px;
-  /* Optional: adds space between items */
   margin-top: 8px;
-  padding: 10px;
-  /* Optional: adds some padding inside the items */
+  padding: 20px 10px 20px 10px;
+  font-size: 1.1em;
+  font-weight: 200
 }
 
 .result-card {
@@ -151,10 +144,7 @@
 
 
 .result-card:hover .more-info {
-  /* Example: Change color and increase font size */
   opacity: 100%;
-  /* New text color on hover */
-  /* Increased font size */
   transition: opacity 0.6s ease-in-out
 }
 
@@ -167,4 +157,13 @@
 
 .thinoutline {
   border: 1px solid #cfcfcf !important;
+}
+
+.thinoutselected {
+  border: 1px solid #443161 !important;
+}
+
+.thinoutselected:hover,
+.thinoutline:hover {
+  background-color: #cbcccf !important;
 }

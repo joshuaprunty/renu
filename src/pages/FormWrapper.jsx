@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import Form1A from "../formSteps/Form1A";
 import Form1B from "../formSteps/Form1B";
 import Form2A from "../formSteps/Form2A";
@@ -9,13 +8,10 @@ import Form2D from "../formSteps/Form2D";
 import Form3B from "../formSteps/Form3B";
 import FormLoad from "../formSteps/FormLoad";
 import FormResults from "../formSteps/FormResults";
-
-import "../styles/Form.css";
-import "../styles/debug.css";
-
 import { processFormData } from "../processFormData";
+import "../styles/Form.css";
 
-function MultiStepForm() {
+function FormWrapper() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     year: null,
@@ -25,7 +21,6 @@ function MultiStepForm() {
     diff: null,
   });
   const [scores, setScores] = useState([]);
-
   useEffect(() => {
     if (currentStep === 8) {
       setTimeout(() => {
@@ -34,7 +29,6 @@ function MultiStepForm() {
     }
   }, [scores]);
 
-  // Function to move to the next step
   const nextStep = () => {
     setCurrentStep(currentStep + 1);
     console.log(currentStep);
@@ -83,7 +77,6 @@ function MultiStepForm() {
           <Form2C
             currSchool={formData.school}
             currMajors={formData.majors}
-            currMinors={formData.minors}
             updateFormData={updateFormData}
             nextStep={nextStep}
             backStep={backStep}
@@ -119,4 +112,4 @@ function MultiStepForm() {
   return <div className="vh-100 container-lg formcont">{renderStep()}</div>;
 }
 
-export default MultiStepForm;
+export default FormWrapper;

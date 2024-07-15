@@ -1,12 +1,14 @@
 // IMPORTS
 //-------------------------------------------------------------------------------------------------------import React, { useState } from "react";
 import { useState } from "react";
-import "../styles/Home.css";
-import "../styles/Form.css";
 import BackNext from "../components/Form/BackNext";
 import React from "react";
 import Select from "react-select";
 import majors from "../data/majors.json";
+import { fullSchools } from "../data/util";
+
+import "../styles/Home.css";
+import "../styles/Form.css";
 
 // FORM STEP
 //-------------------------------------------------------------------------------------------------------
@@ -17,18 +19,7 @@ function Form2C({
   nextStep,
   backStep,
 }) {
-  const fullSchools = {
-    Weinberg: "Weinberg College of Arts and Sciences",
-    McCormick: "McCormick School of Engineering",
-    Medill: "Medill School of Journalism",
-    Bienen: "Bienen School of Music",
-    Communications: "School of Communications",
-    SESP: "School of Education and Social Policy",
-  };
-
-  console.log(currSchool);
   const schoolMajors = majors[currSchool];
-  console.log(schoolMajors);
   const exampleOptions = schoolMajors.map((major) => ({
     value: major,
     label: major,
@@ -110,6 +101,7 @@ function Form2C({
         <BackNext
           handleBackClick={handleBackClick}
           handleNextClick={handleNextClick}
+          is_centered={false}
         />
         {errorState && (
           <p className="position-absolute errormsg">

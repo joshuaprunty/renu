@@ -3,7 +3,6 @@
 import React from "react";
 import "/src/styles/LandingCard.css";
 import "/src/styles/Home.css";
-import "/src/styles/debug.css";
 
 // MAIN
 //-------------------------------------------------------------------------------------------------------

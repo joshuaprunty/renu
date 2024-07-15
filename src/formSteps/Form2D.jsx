@@ -1,9 +1,9 @@
 // IMPORTS
 //-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
+import BackNext from "../components/Form/BackNext";
 import "../styles/Home.css";
 import "../styles/Form.css";
-import BackNext from "../components/Form/BackNext";
 
 // FORM STEP
 //-------------------------------------------------------------------------------------------------------
@@ -63,6 +63,7 @@ function Form2D({ currFulfill, updateFormData, nextStep, backStep }) {
         <BackNext
           handleBackClick={handleBackClick}
           handleNextClick={handleNextClick}
+          is_centered={false}
         />
         {errorState && (
           <p className="position-absolute errormsg">

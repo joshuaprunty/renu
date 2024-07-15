@@ -22,28 +22,35 @@ const diffStringToNumber = {
 function getMaxKeyValue(obj) {
   let maxKey = null;
   let maxValue = -Infinity; // Initialize to the smallest number
-
   for (const [key, value] of Object.entries(obj)) {
     if (value > maxValue) {
       maxValue = value;
       maxKey = key;
     }
   }
-
   const mvString = `${maxValue * 100}%`;
   return { maxKey, mvString };
 }
 
+function getInherentScore(oi, oc, s) {
+  oi = convertScale(oi);
+  oc = convertScale(oc);
+  s = convertScale(s);
+  return (oi + oc + s) / 3;
+}
+
+function getAvgYear(demoYear) {
+  return (
+    demoYear.Freshman +
+    2 * demoYear.Sophomore +
+    3 * demoYear.Junior +
+    4 * demoYear.Senior
+  );
+}
+
 export function processFormData(formData) {
-  // Process the form data
   let studentYear = yearStringToNumber[formData.year];
   let finalScores = [];
-
-  console.log(
-    `Form Data: Year: ${formData.year}, School: ${
-      formData.school
-    }, Majors: ${formData.majors.join(", ")}`
-  );
 
   courseData.forEach((course) => {
     const {
@@ -53,64 +60,33 @@ export function processFormData(formData) {
       demoRequirement,
     } = course;
 
-    // Convert scales
-    let normalOI = convertScale(overallInstruction);
-    let normalOC = convertScale(overallCourse);
-    let normalS = convertScale(stimulus);
-
-    // Calculate inherent score
-    let inherentScore = (normalOI + normalOC + normalS) / 3;
-
-    // Calculate average year as a float
-    let avgYear =
-      demoYear.Freshman +
-      2 * demoYear.Sophomore +
-      3 * demoYear.Junior +
-      4 * demoYear.Senior;
-    // Placeholder for year relevance score calculation
-    // This would be more complex and depend on the student's year and the course's year distribution
+    let avgYear = getAvgYear(demoYear);
     let diff = Math.abs(avgYear - studentYear);
     let yearCloseScore = (1 - diff / 3) * 10;
     let yearHitScore = demoYear[formData.year] * 10;
-    let yearScore = (yearCloseScore + yearHitScore) / 2;
-
-    let schoolScore = (demoSchool[formData.school] + 1) * 2;
-
-    // console.log("HERE");
-    // console.log(formData.fulfills);
-    let reqScore = demoRequirement[formData.fulfills];
-    console.log(reqScore);
-
-    // Placeholder for major relevance score
-    let majorRelevanceScore = 5; // Placeholder value
-
     let difficultyRating = challenge + hours - 5;
-    console.log("LOOK HERE RETARD");
-    console.log("challenge", challenge);
-    console.log("hours", hours);
-    console.log("desired diff", diffStringToNumber[formData.diff]);
     let diffRelevance = Math.abs(
       difficultyRating - diffStringToNumber[formData.diff]
     );
-    console.log("diffRelevance", diffRelevance);
-    let diffCalculated = 2 - diffRelevance / 4;
-    console.log("diffCalculated", diffCalculated);
 
-    console.log(`Course: ${course.title}`);
-    console.log(`Inherent Score: ${inherentScore.toFixed(2)}`);
-    console.log(`Year Relevance: ${yearScore.toFixed(2)}`);
-    console.log(`School Relevance: ${schoolScore.toFixed(2)}`);
-    console.log(`Major Relevance: ${majorRelevanceScore}`);
-    console.log(`Requirement Relevance: ${reqScore}`);
-    console.log(`Difficulty Relevance: ${diffCalculated.toFixed(2)}`);
+    let yearScore = (yearCloseScore + yearHitScore) / 2;
+    let diffScore = 2 - diffRelevance / 4;
+    let schoolScore = (demoSchool[formData.school] + 1) * 2;
+    let reqScore = demoRequirement[formData.fulfills];
+    let majorScore = 5; // Placeholder value
+    let inherentScore = getInherentScore(
+      overallInstruction,
+      overallCourse,
+      stimulus
+    );
 
     let finalScore =
       (inherentScore / 2) *
       yearScore *
       schoolScore *
-      (majorRelevanceScore / 5) *
+      (majorScore / 5) *
       (1 + reqScore) *
-      diffCalculated;
+      diffScore;
 
     let title = course.title;
 

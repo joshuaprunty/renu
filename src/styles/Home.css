@@ -2,15 +2,10 @@
   color-scheme: dark;
 }
 
-/* BODY FONT --------------------------------------------------------*/
 body {
   font-family: "Lato";
   background-color: #2a292c;
 }
-
-/* * {
-  border: 1px solid red
-} */
 
 /* NAVBAR -----------------------------------------------------------*/
 .navbar {
@@ -53,7 +48,7 @@ body {
   margin: auto;
 }
 
-/* SECTION - HERO --------------------------------------------------*/
+/* HERO --------------------------------------------------*/
 .hero-div {
   background-image: url(../assets/Deering.jpg);
   background-size: cover;
@@ -84,7 +79,7 @@ body {
   font-weight: 300;
 }
 
-/* SECTION - SECONDARY ----------------------------------------------*/
+/* SECONDARY ----------------------------------------------*/
 .secondary-div {
   display: flex;
   justify-content: center;
@@ -103,7 +98,7 @@ body {
   margin: 0 auto 20px;
 }
 
-/* SECTION - TERNARY */
+/* TERNARY */
 .ternary-div {
   background-color: #ffffff;
 }
@@ -149,7 +144,7 @@ body {
   padding: 0 20px;
 }
 
-/* SECTION - QUATERNARY ----------------------------------------------*/
+/* QUATERNARY ----------------------------------------------*/
 .quaternary-div {
   background-color: #443161;
   height: 65vh;
@@ -180,7 +175,7 @@ body {
   z-index: 0;
 }
 
-/* SECTION - FOOTER -------------------------------------------------*/
+/* FOOTER -------------------------------------------------*/
 .footer-div {
   font-size: 0.9em;
   padding: 20px;

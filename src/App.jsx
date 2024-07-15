@@ -4,7 +4,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
-import FormContainer from "./pages/FormContainer";
+import FormWrapper from "./pages/FormWrapper";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="form" element={<FormContainer />} />
+          <Route path="form" element={<FormWrapper />} />
         </Route>
       </Routes>
     </BrowserRouter>

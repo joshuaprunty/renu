@@ -1,38 +1,46 @@
 // IMPORTS
 //-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
+import BackNext from "../components/Form/BackNext";
 import "../styles/Form.css";
 import "../styles/Home.css";
-import BackNext from "../components/Form/BackNext";
-import { schools } from "../data/util";
 
 // FORM STEP
 //-------------------------------------------------------------------------------------------------------
-function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
+function FormSelectStep({
+  heading,
+  options,
+  currSelection,
+  updateFormData,
+  nextStep,
+  backStep,
+  datakey,
+}) {
+  // Content Variables --------------------------------------------
+
   // UseState Variables -------------------------------------------------
-  const [selectedSchool, setSelectedSchool] = useState(
-    schools.indexOf(currSchool) + 1
+  const [selectedOption, setselectedOption] = useState(
+    options.indexOf(currSelection) + 1
   );
 
   const [errorState, setErrorState] = useState(false);
 
   // Function Declarations ----------------------------------------------
-  function handleSchoolClick(schoolIndex) {
-    setSelectedSchool(schoolIndex);
-    setErrorState(false);
-    updateFormData({ school: schools[schoolIndex - 1] });
-  }
+  const handleOptionClick = (optionindex) => {
+    setselectedOption(optionindex);
+  };
 
+  // Next
   const handleNextClick = () => {
-    if (selectedSchool != 0) {
-      updateFormData({ school: schools[selectedSchool - 1] });
-      console.log(selectedSchool);
+    if (selectedOption != 0) {
+      updateFormData({ [datakey]: options[selectedOption - 1] });
       nextStep();
     } else {
       setErrorState(true);
     }
   };
 
+  // Back
   const handleBackClick = () => {
     backStep();
   };
@@ -42,31 +50,32 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
     <>
       <div class="form-div-main">
         <div className="form-content d-grid gap-2 position-relative z-2">
-          <h2>Your School/College:</h2>
-          {schools.map((school, index) => (
+          <h2>{heading}</h2>
+          {options.map((option, index) => (
             <button
               key={index}
-              className="btn btn-outline-secondary d-flex align-items-center py-3"
-              onClick={() => handleSchoolClick(index + 1)}
+              className={`btn btn-outline-secondary d-flex align-items-center py-3 ${
+                selectedOption === index + 1 ? "thinoutselected" : "thinoutline"
+              }`}
+              onClick={() => handleOptionClick(index + 1)}
             >
               <div
                 className={`check-square ms-4 ${
-                  selectedSchool === index + 1 ? "check-square-selected" : ""
+                  selectedOption === index + 1 ? "check-square-selected" : ""
                 }`}
               ></div>
               <span className="form-option-text ms-lg-5 ms-3 fs-5">
-                {school}
+                {option}
               </span>
             </button>
           ))}
           <BackNext
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
-            is_centered={false}
           />
           {errorState && (
             <p className="position-absolute errormsg">
-              Please select a school to proceed.
+              Please select an option to proceed.
             </p>
           )}
         </div>
@@ -76,4 +85,4 @@ function Form2B({ currSchool, updateFormData, nextStep, backStep }) {
 }
 
 // Export
-export default Form2B;
+export default FormSelectStep;

@@ -2,25 +2,20 @@
 //-------------------------------------------------------------------------------------------------------
 import React, { useState } from "react";
 import BackNext from "../components/Form/BackNext";
+import { years } from "../data/util";
 import "../styles/Form.css";
 import "../styles/Home.css";
 
 // FORM STEP
 //-------------------------------------------------------------------------------------------------------
 function Form2A({ currYear, updateFormData, nextStep, backStep }) {
-  // Content Variables --------------------------------------------
-  const years = ["Freshman", "Sophomore", "Junior", "Senior"];
-
   // UseState Variables -------------------------------------------------
   const [selectedYear, setSelectedYear] = useState(years.indexOf(currYear) + 1);
-
   const [errorState, setErrorState] = useState(false);
-
   // Function Declarations ----------------------------------------------
   const handleYearClick = (yearIndex) => {
     setSelectedYear(yearIndex);
   };
-
   // Next
   const handleNextClick = () => {
     if (selectedYear != 0) {
@@ -30,7 +25,6 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
       setErrorState(true);
     }
   };
-
   // Back
   const handleBackClick = () => {
     backStep();
@@ -45,7 +39,9 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
           {years.map((year, index) => (
             <button
               key={index}
-              className="btn btn-outline-secondary thinoutline d-flex align-items-center py-3"
+              className={`btn btn-outline-secondary d-flex align-items-center py-3 ${
+                selectedYear === index + 1 ? "thinoutselected" : "thinoutline"
+              }`}
               onClick={() => handleYearClick(index + 1)}
             >
               <div
@@ -59,6 +55,7 @@ function Form2A({ currYear, updateFormData, nextStep, backStep }) {
           <BackNext
             handleBackClick={handleBackClick}
             handleNextClick={handleNextClick}
+            is_centered={false}
           />
           {errorState && (
             <p className="position-absolute errormsg">
